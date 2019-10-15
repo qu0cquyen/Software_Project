@@ -4,23 +4,42 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    EditText txtUserName;
+    EditText txtPassword;
+    Button btnLogin;
 
-    private final int SPLASH_DELAY = 5000; //Delays for 5 seconds
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new Handler().postDelayed(new Runnable() {
+        findAllView();
+
+        btnLogin.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void run() {
-                Intent in = new Intent(MainActivity.this, splash_screen.class);
-                startActivity(in);
-                finish();
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(MainActivity.this, profile_screen.class);
+                startActivity(intent);
             }
-        }, SPLASH_DELAY);
+        });
+
+
+    }
+
+
+
+    protected void findAllView()
+    {
+        txtUserName = findViewById(R.id.txtUsername);
+        txtPassword = findViewById(R.id.txtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
     }
 }

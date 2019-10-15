@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/txtUserName"
+        android:hint="@string/txtUserName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintLeft_toLeftOf="parent"
