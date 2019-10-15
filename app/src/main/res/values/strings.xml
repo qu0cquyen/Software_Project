@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Automotive_UI</string>
+    <string name="lbLogin">Login in</string>
+    <string name="txtUserName">User name</string>
+    <string name="txtPassword">Password</string>
+    <string name="btnLogin">Sign in</string>
+    <string name="title_activity_profile_screen">profile_screen</string>
 </resources>
