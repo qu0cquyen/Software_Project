@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, profile_screen.class);
+                Intent intent = new Intent(MainActivity.this, profile2_screen.class);
                 startActivity(intent);
             }
         });

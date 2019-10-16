@@ -7,4 +7,5 @@
     <string name="title_activity_profile_screen">profile_screen</string>
     <string name="profile_image">Avatar</string>
     <string name="p_btnPatientList">Patient List</string>
+    <string name="btnLogout">Logout</string>
 </resources>
