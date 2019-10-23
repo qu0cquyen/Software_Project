@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txtUserName;
     EditText txtPassword;
     Button btnLogin;
-
+    Button btnParamedic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +26,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, profile2_screen.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(MainActivity.this, profile2_screen.class);
+                startActivity(intent1);
             }
         });
-
+        btnParamedic.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent2 = new Intent(MainActivity.this, paramedic_screen.class);
+                startActivity(intent2);
+            }
+        });
 
     }
 
@@ -41,5 +49,6 @@ public class MainActivity extends AppCompatActivity {
         txtUserName = findViewById(R.id.txtUsername);
         txtPassword = findViewById(R.id.txtPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnParamedic = findViewById(R.id.btnParamedic);
     }
 }

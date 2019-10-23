@@ -73,5 +73,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
+    <Button
+        android:id="@+id/btnParamedic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paramedic Mode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
 
 </android.support.constraint.ConstraintLayout>
