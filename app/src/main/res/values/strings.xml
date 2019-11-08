@@ -4,12 +4,11 @@
     <string name="txtUserName">Username</string>
     <string name="txtPassword">Password</string>
     <string name="btnLogin">Sign In</string>
-    <string name="title_activity_profile_screen">profile_screen</string>
-    <string name="profile_image">Avatar</string>
     <string name="p_btnPatientList">Patient List</string>
     <string name="btnLogout">Logout</string>
     <string name="doctorName">Dr. Anonymous</string>
     <string name="doctorInfo">  Type: Physician\n\n
                                 Specialty: Cardiology\n\n
                                 Experience: 15 Years</string>
+    <string name="btnParamedic">Paramedic Mode</string>
 </resources>
