@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "813200486251",
+    "firebase_url": "https://automotive-ui.firebaseio.com",
+    "project_id": "automotive-ui",
+    "storage_bucket": "automotive-ui.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813200486251:android:1db60a66e4c3f7733aa62e",
+        "android_client_info": {
+          "package_name": "com.example.emergensui.automotive_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813200486251-01ho3n9ii2295b6bcqhijmk126764r7o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emergensui.automotive_ui",
+            "certificate_hash": "977f1bd6b65b9dceb584067b6c87ff48dbe0729f"
+          }
+        },
+        {
+          "client_id": "813200486251-p640cbh1sgfdot7ctk90vn47ft84gt19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBjyRqwpvTb-B_pVyUbbuRm-8Y24lle8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813200486251-p640cbh1sgfdot7ctk90vn47ft84gt19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
