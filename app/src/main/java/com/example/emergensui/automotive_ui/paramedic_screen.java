@@ -1,9 +1,10 @@
 package com.example.emergensui.automotive_ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class paramedic_screen extends AppCompatActivity {
 
