@@ -34,9 +34,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.0'
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-database:19.1.0'
-
-    //Graph lib
     implementation 'com.jjoe64:graphview:4.2.2'
+
 }
 
 // TODO: Add the following to enable firebase authentication and database.
