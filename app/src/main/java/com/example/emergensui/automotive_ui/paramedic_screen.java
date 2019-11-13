@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.github.anastr.speedviewlib.SpeedView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
@@ -14,17 +15,15 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import java.util.Random;
 
 public class paramedic_screen extends AppCompatActivity {
-    private LineGraphSeries<DataPoint> series;
     private static final Random RAMDOM = new Random();
-    private int lastX = 0;
+    private int lastX = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paramedic_screen);
 
-        Button btnBack= (Button)findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener()
-        {
+        Button btnBack = (Button) findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
@@ -32,42 +31,46 @@ public class paramedic_screen extends AppCompatActivity {
 
         });
 
-        //Create real time graph
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<DataPoint>();
-        graph.addSeries(series);
-        Viewport viewport = graph.getViewport();
-        viewport.setYAxisBoundsManual(true);
-        viewport.setMinY(0);
-        viewport.setMaxY(10);
-        viewport.setScrollable(true);
+
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+                    new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                    new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
 
 
-    }
+            });
+            graph.addSeries(series);
+        }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        new Thread(new Runnable(){
-            @Override
-            public void run(){
-                for(int i=0;;i++){
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            addEntry();
-                        }
-                    });
-                    try {
-                        Thread.sleep(600);
-                    } catch (InterruptedException e) {
-                    }
-                }
-            }
-        }).start();
-    }
-    // add random data to graph
-    private void addEntry(){
-        series.appendData(new DataPoint(lastX++, RAMDOM.nextDouble()*10d),true,10);
-    }
 }
+
+
