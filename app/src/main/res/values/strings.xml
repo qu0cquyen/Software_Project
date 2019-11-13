@@ -15,4 +15,6 @@
                                 Specialty: Cardiology\n\n
                                 Experience: 15 Years</string>
     <string name="btnParamedic">Paramedic Mode</string>
+    <string name="lbPatientName">Patient Name</string>
+    <string name="title_activity_patient_list">patient_list</string>
 </resources>

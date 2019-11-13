@@ -1,4 +1,4 @@
-package com.example.emergensui.automotive_ui;
+package com.example.emergensui.automotive_ui.Class;
 
 public class UData {
     private String profession_id;

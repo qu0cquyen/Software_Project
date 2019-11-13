@@ -1,11 +1,14 @@
 package com.example.emergensui.automotive_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.emergensui.automotive_ui.Class.UData;
+import com.example.emergensui.automotive_ui.Class.Doctor;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -69,7 +72,7 @@ public class profile2_screen extends AppCompatActivity {
                             ud = dataSnapshot.getValue(Doctor.class);
 
                             txtName.setText(ud.getName());
-                            txtSpec.setText(ud.getSpec_id());
+                            txtSpec.setText(ud.getSpec_ID());
                             txtType.setText(user.getType());
                         }
 
@@ -114,8 +117,9 @@ public class profile2_screen extends AppCompatActivity {
         btnPatientList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(profile2_screen.this, patient_list.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(profile2_screen.this, patient_list.class);
+                intent.putExtra("Doc_ID", user.getProfession_id());
+                startActivity(intent);
 
             }
         });
