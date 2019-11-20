@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MapActivity"></activity>
         <activity
             android:name=".patient_list"
             android:label="@string/title_activity_patient_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".paramedic_screen"
             android:theme="@style/AppFullScreenTheme" />
@@ -32,5 +33,5 @@
             android:name=".MainActivity"
             android:theme="@style/AppFullScreenTheme" />
     </application>
-
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
