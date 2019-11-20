@@ -24,88 +24,17 @@
             android:text="@string/lbPatientName"
             android:textSize="18sp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:orientation="vertical"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sub_items"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/sub_items"
+            android:clickable="true"
             app:layout_constraintTop_toBottomOf="@+id/lbPatientName"
-            app:layout_constraintBottom_toBottomOf="@+id/view_title"
-            app:layout_constraintRight_toRightOf="@+id/view_title"
-            app:layout_constraintLeft_toLeftOf="@+id/view_title"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/lblRoomNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room Number:"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientType"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"/>
-
-            <TextView
-                android:id="@+id/lblPatientRoom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room #"
-                app:layout_constraintLeft_toRightOf="@+id/lblRoomNumber"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientRoom"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"/>
-
-            <TextView
-                android:id="@+id/lblPatientType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Patient Status:"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblRoomNumber"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientDoB"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintVertical_bias="0.2"/>
-
-            <TextView
-                android:id="@+id/lblPatientTypeValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room Number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.26"
-                app:layout_constraintLeft_toRightOf="@+id/lblPatientType"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblPatientRoom"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/lblPatientDoB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Date of Birth: "
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.097"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblPatientType"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/lblPatientDoB_Value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room Number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.29"
-                app:layout_constraintLeft_toRightOf="@+id/lblPatientDoB"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblPatientTypeValue"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

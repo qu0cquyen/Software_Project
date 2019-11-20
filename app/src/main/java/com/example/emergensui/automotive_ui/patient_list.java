@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.emergensui.automotive_ui.Adapter.PatientAdapter;
+import com.example.emergensui.automotive_ui.Adapter.PatientChildAdapter;
 import com.example.emergensui.automotive_ui.Class.Patient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -36,12 +37,15 @@ public class patient_list extends AppCompatActivity {
     //Local Variables
 
     RecyclerView mRecyclerView;
+    RecyclerView mChildRecyclerView;
     PatientAdapter adapter;
+    PatientChildAdapter childAdapter;
 
     private String docID;
 
     //Class
     Patient p;
+    int count = 0;
     ArrayList<Patient> patientArrayList;
 
 
@@ -56,6 +60,7 @@ public class patient_list extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         patientArrayList = new ArrayList<>();
         adapter = new PatientAdapter(this, patientArrayList);
+        //childAdapter = new PatientChildAdapter(patientArrayList, this);
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
@@ -85,6 +90,7 @@ public class patient_list extends AppCompatActivity {
                     System.out.println(patientPath);
                     System.out.println(dsh.getKey());
 
+
                     //Access to the inner child
                     mReference = mDatabase.getReference(patientPath);
 
@@ -93,7 +99,11 @@ public class patient_list extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                             p = dataSnapshot.getValue(Patient.class);
+                            p.setPos(count);
+                            count++;
                             patientArrayList.add(p);
+
+
 
                             adapter.notifyDataSetChanged();
 
@@ -140,6 +150,8 @@ public class patient_list extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
 
 
