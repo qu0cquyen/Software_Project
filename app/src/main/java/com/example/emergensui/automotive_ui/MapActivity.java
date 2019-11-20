@@ -2,6 +2,7 @@ package com.example.emergensui.automotive_ui;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
@@ -24,7 +25,6 @@ import com.mapbox.mapboxsdk.style.layers.PropertyFactory;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 // classes needed to add a marker
 import com.mapbox.geojson.Feature;
@@ -37,17 +37,42 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacem
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset;
 
+// classes to calculate a route
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions;
+import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute;
+import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
+import com.mapbox.api.directions.v5.models.DirectionsResponse;
+import com.mapbox.api.directions.v5.models.DirectionsRoute;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import android.util.Log;
+
+// classes needed to launch navigation UI
+import android.view.View;
+import android.widget.Button;
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher;
+
 
 public class MapActivity extends AppCompatActivity implements
-        OnMapReadyCallback, PermissionsListener {
+        OnMapReadyCallback, MapboxMap.OnMapClickListener, PermissionsListener {
 
-    private PermissionsManager permissionsManager;
-    private MapboxMap mapboxMap;
+    // variables for adding location layer
     private MapView mapView;
+    private MapboxMap mapboxMap;
+    // variables for adding location layer
+    private PermissionsManager permissionsManager;
+    private LocationComponent locationComponent;
 
-    private static final String SOURCE_ID = "SOURCE_ID";
-    private static final String ICON_ID = "ICON_ID";
-    private static final String LAYER_ID = "LAYER_ID";
+    // variables for calculating and drawing a route
+    private DirectionsRoute currentRoute;
+    private static final String TAG = "DirectionsActivity";
+    private NavigationMapRoute navigationMapRoute;
+
+    // variables needed to start navigation
+    private Button button;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +92,29 @@ public class MapActivity extends AppCompatActivity implements
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
-        MapActivity.this.mapboxMap = mapboxMap;
+        this.mapboxMap = mapboxMap;
         mapboxMap.setStyle(new Style.Builder().fromUri("mapbox://styles/emergensui/ck2xiz0v702hr1cpiti001i27"),
                 new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style){
                         enableLocationComponent(style);
+
                         addDestinationIconSymbolLayer(style);
 
-                        
+                        mapboxMap.addOnMapClickListener(MapActivity.this);
+                        button = findViewById(R.id.startButton);
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                boolean simulateRoute = true;
+                                NavigationLauncherOptions options = NavigationLauncherOptions.builder()
+                                        .directionsRoute(currentRoute)
+                                        .shouldSimulateRoute(simulateRoute)
+                                        .build();
+                                // Call this method with Context from within an Activity
+                                NavigationLauncher.startNavigation(MapActivity.this, options);
+                            }
+                        });
                     }
                 });
     }
@@ -94,13 +133,67 @@ public class MapActivity extends AppCompatActivity implements
         loadedMapStyle.addLayer(destinationSymbolLayer);
     }
 
+    @SuppressWarnings( {"MissingPermission"})
+    @Override
+    public boolean onMapClick(@NonNull LatLng point) {
+
+        Point destinationPoint = Point.fromLngLat(point.getLongitude(), point.getLatitude());
+        Point originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
+                locationComponent.getLastKnownLocation().getLatitude());
+
+        GeoJsonSource source = mapboxMap.getStyle().getSourceAs("destination-source-id");
+        if (source != null) {
+            source.setGeoJson(Feature.fromGeometry(destinationPoint));
+        }
+        getRoute(originPoint, destinationPoint);
+        button.setEnabled(true);
+        button.setBackgroundResource(R.color.mapboxBlue);
+        return true;
+    }
+
+    private void getRoute(Point origin, Point destination) {
+        NavigationRoute.builder(this)
+                .accessToken(Mapbox.getAccessToken())
+                .origin(origin)
+                .destination(destination)
+                .build()
+                .getRoute(new Callback<DirectionsResponse>() {
+                    @Override
+                    public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
+// You can get the generic HTTP info about the response
+                        Log.d(TAG, "Response code: " + response.code());
+                        if (response.body() == null) {
+                            Log.e(TAG, "No routes found, make sure you set the right user and access token.");
+                            return;
+                        } else if (response.body().routes().size() < 1) {
+                            Log.e(TAG, "No routes found");
+                            return;
+                        }
+
+                        currentRoute = response.body().routes().get(0);
+
+// Draw the route on the map
+                        if (navigationMapRoute != null) {
+                            navigationMapRoute.removeRoute();
+                        } else {
+                            navigationMapRoute = new NavigationMapRoute(null, mapView, mapboxMap, R.style.NavigationMapRoute);
+                        }
+                        navigationMapRoute.addRoute(currentRoute);
+                    }
+
+                    @Override
+                    public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
+                        Log.e(TAG, "Error: " + throwable.getMessage());
+                    }
+                });
+    }
 
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
         if(PermissionsManager.areLocationPermissionsGranted(this)) {
 
             // Get an instance of the component
-            LocationComponent locationComponent =
+            locationComponent =
                     mapboxMap.getLocationComponent();
 
             // Activate with options
