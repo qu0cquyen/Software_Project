@@ -1,18 +1,20 @@
 package com.example.emergensui.automotive_ui;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.anastr.speedviewlib.SpeedView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.ValueDependentColor;
-import com.jjoe64.graphview.Viewport;
-import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -29,7 +31,6 @@ public class paramedic_screen extends AppCompatActivity {
     private TextView oxygen_value;
     private TextView respiration_value;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,6 @@ public class paramedic_screen extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
             }
-
         });
 
         testWithRandom();
@@ -57,6 +57,7 @@ public class paramedic_screen extends AppCompatActivity {
         oxygen_value = (TextView)findViewById(R.id.oxygen_value);
         respiration_value = (TextView)findViewById(R.id.respiration_value);
     }
+
     private void testWithRandom(){
         String speedV = RAMDOM.nextInt(200)+ " km/h";
         speed_value.setText(speedV);
@@ -72,31 +73,6 @@ public class paramedic_screen extends AppCompatActivity {
     private void testGraph(){
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
                 new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
