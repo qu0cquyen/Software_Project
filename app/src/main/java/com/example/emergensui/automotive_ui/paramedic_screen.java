@@ -46,6 +46,30 @@ public class paramedic_screen extends AppCompatActivity {
         });
 
         testWithRandom();
+        testGraph();
+    }
+    private void getId(){
+        btnBack = (Button) findViewById(R.id.btnBack);
+        speed_value = (TextView)findViewById(R.id.speed_value);
+        graph = (GraphView) findViewById(R.id.graph);
+        heart_value = (TextView)findViewById(R.id.heart_value);
+        blood_value = (TextView)findViewById(R.id.blood_value);
+        oxygen_value = (TextView)findViewById(R.id.oxygen_value);
+        respiration_value = (TextView)findViewById(R.id.respiration_value);
+    }
+    private void testWithRandom(){
+        String speedV = RAMDOM.nextInt(200)+ " km/h";
+        speed_value.setText(speedV);
+        String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
+        heart_value.setText(heartV);
+        String bloodV = (RAMDOM.nextInt(100)+60)+ "/" + (RAMDOM.nextInt(40)+20)+ " mmHg";
+        blood_value.setText(bloodV);
+        String oxygenV = (RAMDOM.nextInt(10)+ 90)+ " %";
+        oxygen_value.setText(oxygenV);
+        String respirationV = (RAMDOM.nextInt(40))+ " rps";
+        respiration_value.setText(respirationV);
+    }
+    private void testGraph(){
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
                 new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
@@ -82,27 +106,7 @@ public class paramedic_screen extends AppCompatActivity {
         });
         graph.addSeries(series);
 
-    }
-    private void getId(){
-        btnBack = (Button) findViewById(R.id.btnBack);
-        speed_value = (TextView)findViewById(R.id.speed_value);
-        graph = (GraphView) findViewById(R.id.graph);
-        heart_value = (TextView)findViewById(R.id.heart_value);
-        blood_value = (TextView)findViewById(R.id.blood_value);
-        oxygen_value = (TextView)findViewById(R.id.oxygen_value);
-        respiration_value = (TextView)findViewById(R.id.respiration_value);
-    }
-    private void testWithRandom(){
-        String speedV = RAMDOM.nextInt(200)+ " km/h";
-        speed_value.setText(speedV);
-        String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
-        heart_value.setText(heartV);
-        String bloodV = (RAMDOM.nextInt(100)+60)+ "/" + (RAMDOM.nextInt(40)+20)+ " mmHg";
-        blood_value.setText(bloodV);
-        String oxygenV = (RAMDOM.nextInt(10)+ 90)+ " %";
-        oxygen_value.setText(oxygenV);
-        String respirationV = (RAMDOM.nextInt(40))+ " rps";
-        respiration_value.setText(respirationV);
+
     }
 }
 
