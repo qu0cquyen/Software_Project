@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.github.anastr.speedviewlib.SpeedView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +31,11 @@ public class paramedic_screen extends AppCompatActivity {
     private TextView blood_value;
     private TextView oxygen_value;
     private TextView respiration_value;
+    private SpeedView speedometer;
 
+    private FirebaseDatabase database = null;
+    private DatabaseReference ref = null;
+    speedometer s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +50,14 @@ public class paramedic_screen extends AppCompatActivity {
             }
         });
 
+      testSpeedometer();
         testWithRandom();
         testGraph();
     }
     private void getId(){
         btnBack = (Button) findViewById(R.id.btnBack);
         speed_value = (TextView)findViewById(R.id.speed_value);
+        speedometer = findViewById(R.id.speedView);
         graph = (GraphView) findViewById(R.id.graph);
         heart_value = (TextView)findViewById(R.id.heart_value);
         blood_value = (TextView)findViewById(R.id.blood_value);
@@ -58,6 +65,54 @@ public class paramedic_screen extends AppCompatActivity {
         respiration_value = (TextView)findViewById(R.id.respiration_value);
     }
 
+    private void testSpeedometer(){
+        speedometer.setMinSpeed(0);
+        speedometer.setMaxSpeed(200);
+
+        speedometer.speedTo(50);
+
+    }
+    private void getSpeedometerData(){
+        Bundle extras = getIntent().getExtras();
+        database = FirebaseDatabase.getInstance();
+        ref = database.getReference("Speedometer/");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dsh : dataSnapshot.getChildren()) {
+                    final String speedometerPath = "speedometer/" + dsh.getKey();
+                    System.out.println(speedometerPath);
+                    System.out.println(dsh.getKey());
+
+                    ref = database.getReference(speedometerPath);
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            s = dataSnapshot.getValue(speedometer.class);
+
+
+
+                            speed_value.setText(s.getSpeed());
+                            heart_value.setText(s.getHeart_rate());
+                            blood_value.setText(s.getBlood_pressure());
+                            oxygen_value.setText(s.getOxygen());
+                            respiration_value.setText(s.getRespiration());
+
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
     private void testWithRandom(){
         String speedV = RAMDOM.nextInt(200)+ " km/h";
         speed_value.setText(speedV);
@@ -78,7 +133,6 @@ public class paramedic_screen extends AppCompatActivity {
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-
         });
         graph.addSeries(series);
 
