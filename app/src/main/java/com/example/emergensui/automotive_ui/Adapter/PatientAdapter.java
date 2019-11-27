@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,7 +47,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
         final Patient p = lstPatient.get(position);
         holder.setDetails(p);
 
-        int poss = p.getPos();
+        //int poss = p.getPos();
 
         List<Patient> lstpp = new ArrayList<>();
         lstpp.add(p);
@@ -57,10 +56,6 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
 
         holder.childRecycler.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         holder.childRecycler.setAdapter(pca);
-
-
-
-
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +86,7 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
         private View subItems;
         private RecyclerView childRecycler;
 
+
         PatientHolder(@NonNull View itemView)
         {
             super(itemView);
@@ -100,7 +96,9 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
             txtPatientDoB = itemView.findViewById(R.id.lblPatientDoB_Value);*/
             //subItems = itemView.findViewById(R.id.sub_items);
             childRecycler = itemView.findViewById(R.id.sub_items);
-            childRecycler.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
+
+            //childRecycler.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
+            
         }
 
         void setDetails(Patient p)

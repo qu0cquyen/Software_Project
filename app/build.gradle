@@ -50,6 +50,7 @@ dependencies {
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation 'com.jjoe64:graphview:4.2.2'
     implementation 'com.github.anastr:speedviewlib:1.4.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }
 
 // TODO: Add the following to enable firebase authentication and database.
