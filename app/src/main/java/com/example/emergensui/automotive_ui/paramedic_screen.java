@@ -26,6 +26,7 @@ public class paramedic_screen extends AppCompatActivity {
     private int lastX = 1;
     private Button btnBack;
     private TextView speed_value;
+    private int speedv;
     private GraphView graph;
     private TextView heart_value;
     private TextView blood_value;
@@ -50,8 +51,9 @@ public class paramedic_screen extends AppCompatActivity {
             }
         });
 
-      testSpeedometer();
+
         testWithRandom();
+        testSpeedometer();
         testGraph();
     }
     private void getId(){
@@ -69,7 +71,8 @@ public class paramedic_screen extends AppCompatActivity {
         speedometer.setMinSpeed(0);
         speedometer.setMaxSpeed(200);
 
-        speedometer.speedTo(50);
+
+        speedometer.speedTo(speedv,20);
 
     }
     private void getSpeedometerData(){
@@ -114,7 +117,8 @@ public class paramedic_screen extends AppCompatActivity {
         });
     }
     private void testWithRandom(){
-        String speedV = RAMDOM.nextInt(200)+ " km/h";
+        speedv=RAMDOM.nextInt(200);
+        String speedV = speedv + " km/h";
         speed_value.setText(speedV);
         String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
         heart_value.setText(heartV);
