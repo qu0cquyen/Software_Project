@@ -25,7 +25,6 @@ public class paramedic_screen extends AppCompatActivity {
     private static final Random RAMDOM = new Random();
     private int lastX = 1;
     private Button btnBack;
-    private TextView speed_value;
     private int speedv;
     private GraphView graph;
     private TextView heart_value;
@@ -51,14 +50,17 @@ public class paramedic_screen extends AppCompatActivity {
             }
         });
 
+        test();
+    }
 
+    private void test(){
         testWithRandom();
-        testSpeedometer();
+
         testGraph();
+
     }
     private void getId(){
         btnBack = (Button) findViewById(R.id.btnBack);
-        speed_value = (TextView)findViewById(R.id.speed_value);
         speedometer = findViewById(R.id.speedView);
         graph = (GraphView) findViewById(R.id.graph);
         heart_value = (TextView)findViewById(R.id.heart_value);
@@ -97,7 +99,7 @@ public class paramedic_screen extends AppCompatActivity {
 
 
 
-                            speed_value.setText(s.getSpeed());
+                            speedometer.speedTo(s.getSpeed());
                             heart_value.setText(s.getHeart_rate());
                             blood_value.setText(s.getBlood_pressure());
                             oxygen_value.setText(s.getOxygen());
@@ -118,8 +120,7 @@ public class paramedic_screen extends AppCompatActivity {
     }
     private void testWithRandom(){
         speedv=RAMDOM.nextInt(200);
-        String speedV = speedv + " km/h";
-        speed_value.setText(speedV);
+        testSpeedometer();
         String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
         heart_value.setText(heartV);
         String bloodV = (RAMDOM.nextInt(100)+60)+ "/" + (RAMDOM.nextInt(40)+20)+ " mmHg";

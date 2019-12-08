@@ -141,8 +141,8 @@
 
     <TextView
         android:id="@+id/oxygen_txt"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
+        android:layout_width="80dp"
+        android:layout_height="37dp"
         android:layout_marginStart="32dp"
         android:text="Oxygen Saturation:"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
@@ -183,36 +183,13 @@
         app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintStart_toEndOf="@+id/respiration_txt" />
 
-    <TextView
-        android:id="@+id/speed_txt"
-        android:layout_width="138dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="84dp"
-        android:text="Speed:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/speed_value"
-        android:layout_width="136dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="264dp"
-        android:text="0 km/h"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.github.anastr.speedviewlib.SpeedView
         android:id="@+id/speedView"
-        android:layout_width="213dp"
-        android:layout_height="182dp"
+        android:layout_width="223dp"
+        android:layout_height="231dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
