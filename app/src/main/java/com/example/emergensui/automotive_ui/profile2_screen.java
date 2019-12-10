@@ -1,11 +1,14 @@
 package com.example.emergensui.automotive_ui;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.emergensui.automotive_ui.Class.UData;
 import com.example.emergensui.automotive_ui.Class.Doctor;
@@ -19,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 
 public class profile2_screen extends AppCompatActivity {
 
@@ -29,6 +34,8 @@ public class profile2_screen extends AppCompatActivity {
     EditText txtName;
     TextView txtType;
     TextView txtSpec;
+    ImageView langFlag;
+    boolean english = true;
 
     //Class
     UData user;
@@ -36,6 +43,7 @@ public class profile2_screen extends AppCompatActivity {
 
     private void findAllViews()
     {
+        langFlag = findViewById(R.id.flagView);
         txtName = findViewById(R.id.editText);
         txtType = findViewById(R.id.txtTypeValue);
         txtSpec = findViewById(R.id.txtSpecValue);
@@ -120,6 +128,36 @@ public class profile2_screen extends AppCompatActivity {
                 Intent intent = new Intent(profile2_screen.this, patient_list.class);
                 intent.putExtra("Doc_ID", user.getProfession_id());
                 startActivity(intent);
+
+            }
+        });
+
+        langFlag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(english == true){
+                    Locale locale = new Locale("fr","CA");
+                    Locale.setDefault(locale);
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                    english = false;
+
+                    langFlag.setImageResource(R.drawable.flagfr);
+                    return;
+                }
+                if(english == false) {
+                    Locale locale = new Locale("en");
+                    Locale.setDefault(locale);
+                    Configuration config = new Configuration();
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+                    english = true;
+
+                    langFlag.setImageResource(R.drawable.flagen);
+                    return;
+                }
 
             }
         });
