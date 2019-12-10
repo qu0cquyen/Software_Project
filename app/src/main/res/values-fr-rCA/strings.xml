@@ -22,4 +22,12 @@
     <string name="respirationLabel">Respiration:</string>
     <string name="speedLabel">"La vitesse:"</string>
     <string name="speedviewLabel">"Compteur de vitesse:"</string>
+    <string name="hisDate">La Date</string>
+    <string name="hisDocNote">Notes du Médecin</string>
+    <string name="patientInfo_Age">Âge</string>
+    <string name="patientInfo_EmergenContact">Coordonnées D\'Urgence</string>
+    <string name="patientInfo_History">Antécédents du Patient</string>
+    <string name="patientInfo_Name">Nom</string>
+    <string name="patientInfo_Phone">Numéro de Téléphone</string>
+    <string name="patientInfo_Sex">Sexe</string>
 </resources>

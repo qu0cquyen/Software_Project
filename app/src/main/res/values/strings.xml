@@ -18,6 +18,18 @@
     <string name="lbPatientName">Patient Name</string>
     <string name="title_activity_patient_list" translatable="false">patient_list</string>
 
+    <!--- Patient_Information -->
+    <string name="patientInfo_Name">Name</string>
+    <string name="patientInfo_Age">Age</string>
+    <string name="patientInfo_Sex">Sex</string>
+    <string name="patientInfo_EmergenContact">Emergency Contact:</string>
+    <string name="patientInfo_Phone">Phone Number</string>
+    <string name="patientInfo_History">Patient History</string>
+
+    <!--- Patient Information Recycler View -->
+    <string name="hisDate">Date</string>
+    <string name="hisDocNote">Doctor\'s Notes</string>
+
     <!-- Mapbox Token -->
     <string name="mapbox_access_token" translatable="false">pk.eyJ1IjoiZW1lcmdlbnN1aSIsImEiOiJjazJ1dTR1aDQxYTkwM25tbnpjZnp6MXhkIn0.icc2BLwZFIRMw1OUCUdQ-g</string>
     <!-- Mapbox Strings -->
