@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "813200486251-nglnfmo54a9bn7b9pqusql05899dq62c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emergensui.automotive_ui",
+            "certificate_hash": "fb6edb9e162698dfd485f80a667a4d6569378006"
+          }
+        },
+        {
           "client_id": "813200486251-01ho3n9ii2295b6bcqhijmk126764r7o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.anastr.speedviewlib.SpeedView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.ValueDependentColor;
 import com.jjoe64.graphview.Viewport;
@@ -43,7 +49,6 @@ public class paramedic_screen extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
             }
-
         });
         Button btnMap = (Button)findViewById(R.id.btnMap);
         btnMap.setOnClickListener(new View.OnClickListener() {
@@ -55,42 +60,7 @@ public class paramedic_screen extends AppCompatActivity {
         });
 
         testWithRandom();
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
-                new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-
-        });
-        graph.addSeries(series);
-
+        testGraph();
     }
     private void getId(){
         btnBack = (Button) findViewById(R.id.btnBack);
@@ -100,8 +70,6 @@ public class paramedic_screen extends AppCompatActivity {
         blood_value = (TextView)findViewById(R.id.blood_value);
         oxygen_value = (TextView)findViewById(R.id.oxygen_value);
         respiration_value = (TextView)findViewById(R.id.respiration_value);
-
-
     }
     private void testWithRandom(){
         String speedV = RAMDOM.nextInt(200)+ " km/h";
@@ -115,6 +83,22 @@ public class paramedic_screen extends AppCompatActivity {
         String respirationV = (RAMDOM.nextInt(40))+ " rps";
         respiration_value.setText(respirationV);
     }
+    private void testGraph(){
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+                new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+
+        });
+        graph.addSeries(series);
 
 
+    }
 }
+
+
+
+

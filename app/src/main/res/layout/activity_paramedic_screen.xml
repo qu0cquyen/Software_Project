@@ -103,7 +103,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Info_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/Info_txt"
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/blood_txt"
@@ -126,16 +127,17 @@
         android:text="89 bps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Info_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/Info_txt"
+        app:layout_constraintVertical_bias="0.202" />
 
     <TextView
         android:id="@+id/blood_value"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="54dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="316dp"
         android:text="108/68mmHg"
-        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/blood_txt" />
 
     <TextView
@@ -148,38 +150,38 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/respiration_txt"
         app:layout_constraintStart_toEndOf="@+id/heart_value"
-        app:layout_constraintTop_toBottomOf="@+id/Info_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/Info_txt"
+        app:layout_constraintVertical_bias="0.318" />
 
     <TextView
         android:id="@+id/oxygen_value"
         android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
         android:text="99%"
         app:layout_constraintBottom_toTopOf="@+id/respiration_value"
         app:layout_constraintStart_toEndOf="@+id/oxygen_txt"
-        app:layout_constraintTop_toBottomOf="@+id/Info_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/Info_txt"
+        app:layout_constraintVertical_bias="0.308" />
 
     <TextView
         android:id="@+id/respiration_txt"
-        android:layout_width="74dp"
-        android:layout_height="38dp"
+        android:layout_width="78dp"
+        android:layout_height="34dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="36dp"
         android:text="@string/respirationLabel"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/blood_value" />
 
     <TextView
         android:id="@+id/respiration_value"
         android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="308dp"
         android:text="16rps"
-        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/respiration_txt" />
 
     <TextView
@@ -200,7 +202,7 @@
         android:layout_width="136dp"
         android:layout_height="38dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="104dp"
         android:text="0 km/h"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
