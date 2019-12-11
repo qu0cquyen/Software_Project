@@ -1,36 +1,42 @@
 package com.example.emergensui.automotive_ui;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.github.anastr.speedviewlib.SpeedView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.ValueDependentColor;
-import com.jjoe64.graphview.Viewport;
-import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Random;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class paramedic_screen extends AppCompatActivity {
     private static final Random RAMDOM = new Random();
     private int lastX = 1;
     private Button btnBack;
-    private TextView speed_value;
+    private int speedv;
+    private Button btnMap;
     private GraphView graph;
     private TextView heart_value;
     private TextView blood_value;
     private TextView oxygen_value;
     private TextView respiration_value;
+    private SpeedView speedometer;
 
-
+    private FirebaseDatabase database = null;
+    private DatabaseReference ref = null;
+    speedometer s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +49,8 @@ public class paramedic_screen extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
             }
-
         });
-        Button btnMap = (Button)findViewById(R.id.btnMap);
+        btnMap = (Button)findViewById(R.id.btnMap);
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,58 +59,71 @@ public class paramedic_screen extends AppCompatActivity {
             }
         });
 
+        //getSpeedometerData();
+        test();
+    }
+
+    private void test(){
         testWithRandom();
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
-                new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
-
-        });
-        graph.addSeries(series);
-
+        testGraph();
     }
     private void getId(){
         btnBack = (Button) findViewById(R.id.btnBack);
-        speed_value = (TextView)findViewById(R.id.speed_value);
+        speedometer = findViewById(R.id.speedView);
         graph = (GraphView) findViewById(R.id.graph);
         heart_value = (TextView)findViewById(R.id.heart_value);
         blood_value = (TextView)findViewById(R.id.blood_value);
         oxygen_value = (TextView)findViewById(R.id.oxygen_value);
         respiration_value = (TextView)findViewById(R.id.respiration_value);
 
+    }
 
+    private void getSpeedometerData(){
+        Bundle extras = getIntent().getExtras();
+        database = FirebaseDatabase.getInstance();
+        ref = database.getReference("Speedometer/");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot dsh : dataSnapshot.getChildren()) {
+                    final String speedometerPath = "speedometer/" + dsh.getKey();
+                    System.out.println(speedometerPath);
+                    System.out.println(dsh.getKey());
+
+                    ref = database.getReference(speedometerPath);
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            s = dataSnapshot.getValue(speedometer.class);
+
+
+
+                            speedometer.speedTo(s.getSpeed());
+                            heart_value.setText(s.getHeart_rate());
+                            blood_value.setText(s.getBlood_pressure());
+                            oxygen_value.setText(s.getOxygen());
+                            respiration_value.setText(s.getRespiration());
+
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
     }
     private void testWithRandom(){
-        String speedV = RAMDOM.nextInt(200)+ " km/h";
-        speed_value.setText(speedV);
+        speedv=RAMDOM.nextInt(200);
+        speedometer.setMinSpeed(0);
+        speedometer.setMaxSpeed(200);
+        speedometer.speedTo(speedv);
         String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
         heart_value.setText(heartV);
         String bloodV = (RAMDOM.nextInt(100)+60)+ "/" + (RAMDOM.nextInt(40)+20)+ " mmHg";
@@ -115,6 +133,22 @@ public class paramedic_screen extends AppCompatActivity {
         String respirationV = (RAMDOM.nextInt(40))+ " rps";
         respiration_value.setText(respirationV);
     }
+    private void testGraph(){
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+                new DataPoint(lastX, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+                new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
+
+        });
+        graph.addSeries(series);
 
 
+    }
 }
+
+
+
+
