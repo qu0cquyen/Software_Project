@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:id="@+id/childCard">
 
     <LinearLayout
         android:id="@+id/subList"
@@ -24,73 +25,73 @@
             app:layout_constraintVertical_bias="0.0">
 
             <TextView
-                android:id="@+id/lblRoomNumber"
+                android:id="@+id/lblBloodPressure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Room Number:"
+                android:text="@string/patientList_BloodPressure"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientType"
+                app:layout_constraintBottom_toTopOf="@id/lblHeartRate"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintHorizontal_bias="0.1"/>
 
             <TextView
-                android:id="@+id/lblPatientRoom"
+                android:id="@+id/lblPatientBloodPressure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Room #"
-                app:layout_constraintLeft_toRightOf="@+id/lblRoomNumber"
+                android:text="@string/patientInfo_BloodPressure"
+                app:layout_constraintBottom_toTopOf="@id/lblPatientHeartRate"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="@+id/subLayout"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientRoom"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.2"/>
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/lblPatientType"
+                android:id="@+id/lblHeartRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Patient Status:"
+                android:text="@string/patientList_HeartRate"
+                app:layout_constraintBottom_toTopOf="@id/lblOxygen"
+                app:layout_constraintHorizontal_bias="0.091"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblRoomNumber"
-                app:layout_constraintBottom_toTopOf="@id/lblPatientDoB"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintVertical_bias="0.2"/>
+                app:layout_constraintTop_toBottomOf="@+id/lblBloodPressure"
+                app:layout_constraintVertical_bias="0.2" />
 
             <TextView
-                android:id="@+id/lblPatientTypeValue"
+                android:id="@+id/lblPatientHeartRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Room Number"
+                android:text="@string/patientList_HeartRate"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.26"
-                app:layout_constraintLeft_toRightOf="@+id/lblPatientType"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="@+id/subLayout"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblPatientRoom"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblOxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patientList_oxygen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.086"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblHeartRate"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/lblPatientDoB"
+                android:id="@+id/lblPatientOxygen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date of Birth: "
+                android:text="@string/patientInfo_oxygen"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.097"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="@+id/subLayout"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblPatientType"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/lblPatientDoB_Value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room Number"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.29"
-                app:layout_constraintLeft_toRightOf="@+id/lblPatientDoB"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblPatientTypeValue"
+                app:layout_constraintTop_toBottomOf="@id/lblPatientHeartRate"
                 app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

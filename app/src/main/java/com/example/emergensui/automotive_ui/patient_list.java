@@ -1,10 +1,14 @@
 package com.example.emergensui.automotive_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.emergensui.automotive_ui.Adapter.PatientAdapter;
 import com.example.emergensui.automotive_ui.Adapter.PatientChildAdapter;
+import com.example.emergensui.automotive_ui.Class.Medical_Info;
 import com.example.emergensui.automotive_ui.Class.Patient;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -42,11 +46,23 @@ public class patient_list extends AppCompatActivity {
     PatientChildAdapter childAdapter;
 
     private String docID;
+    private String patientID;
 
     //Class
     Patient p;
+    Medical_Info medicalInfo;
     int count = 0;
-    ArrayList<Patient> patientArrayList;
+    int counter = 0;
+    int countChild = -1;
+    int childCounter;
+    ArrayList<Patient> patientArrayList;// = new ArrayList<>();
+    ArrayList<Medical_Info> lstMedicalInfo;
+    ArrayList<String> patientIDlst;
+    ArrayList<String> lstMedicalDate = new ArrayList<>();
+
+
+    ArrayList<String> lstPath;
+
 
 
     private void findAllViews()
@@ -59,12 +75,19 @@ public class patient_list extends AppCompatActivity {
     {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         patientArrayList = new ArrayList<>();
-        adapter = new PatientAdapter(this, patientArrayList);
+        lstMedicalInfo = new ArrayList<>();
+        PatientList_Initiation();
+        //adapter = new PatientAdapter(this, patientArrayList, docID, patientID);
         //childAdapter = new PatientChildAdapter(patientArrayList, this);
+        //mRecyclerView.setAdapter(adapter);
+        adapter = new PatientAdapter(getApplicationContext(), patientArrayList, lstMedicalInfo, docID);
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        PatientList_Initiation();
+        //PatientList_Initiation();
+        System.out.println("We r done with database");
+
+
     }
 
 
@@ -75,37 +98,128 @@ public class patient_list extends AppCompatActivity {
         System.out.println(docID);
         path += docID;
 
+        patientIDlst = new ArrayList<>();
+
         //Get instances for database
         mDatabase = FirebaseDatabase.getInstance();
 
         //Links the database with the specified path
         mReference = mDatabase.getReference(path);
 
-        mReference.addValueEventListener(new ValueEventListener() {
+
+       /* mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot dsh : dataSnapshot.getChildren())
+                for(DataSnapshot dhs : dataSnapshot.getChildren())
                 {
-                    String patientPath = "Patient/" + dsh.getKey();
-                    System.out.println(patientPath);
-                    System.out.println(dsh.getKey());
+                    patientIDlst.add(dhs.getKey());
+                    childCounter = Integer.parseInt(String.valueOf(dataSnapshot.getChildrenCount()));
+                    String patientPath = "Patient/" + dhs.getKey();
 
-
-                    //Access to the inner child
                     mReference = mDatabase.getReference(patientPath);
 
                     mReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                           if(patientArrayList.size() == 0 || (count+1) <= childCounter) {
+                               p = dataSnapshot.getValue(Patient.class);
+                               p.setPos(count);
+                               count++;
+                               patientArrayList.add(p);
+                           }
+                           else
+                           {
+                               *//*for(Patient pa : patientArrayList)
+                               {
+                                  Patient ps = dataSnapshot.getValue(Patient.class);
+                                  if(patientArrayList.contains(ps))
+                                  {
+                                      patientArrayList.set(pa.getPos(), ps);
+                                  }
+                               }*//*
+                               //adapter.notifyDataSetChanged();
+                               adapter.notifyItemRangeChanged(0, childCounter);
+                           }
 
-                            p = dataSnapshot.getValue(Patient.class);
-                            p.setPos(count);
-                            count++;
-                            patientArrayList.add(p);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
 
 
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                patientArrayList.clear();
+                patientIDlst = new ArrayList<>();
+                childCounter = Integer.parseInt(String.valueOf(dataSnapshot.getChildrenCount()));
+                System.out.println(childCounter);
 
+
+                for(DataSnapshot dsh : dataSnapshot.getChildren())
+                {
+                    String patientPath = "Patient/" + dsh.getKey();
+                    String medicalPath = "Medical_Info/" + dsh.getKey();
+                    patientIDlst.add(dsh.getKey());
+
+                    //Needs to reassign the list in order to update ddata for a patient in the app
+                    //Access to the inner child
+                    mReference = mDatabase.getReference(patientPath);
+
+                    /*mReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.getValue() != null) {
+                                Patient p = dataSnapshot.getValue(Patient.class);
+                                p.setPos(count);
+                                count++;
+                                patientArrayList.add(p);
+                            }
                             adapter.notifyDataSetChanged();
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });*/
+
+                    mReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(patientArrayList.size() == 0 || (count+1) <= childCounter) {
+                                p = dataSnapshot.getValue(Patient.class);
+
+                                p.setPos(count);
+                                p.setPatient_ID(patientIDlst.get(count));
+                                //System.out.println(p.getPatient_ID());
+                                count++;
+                                patientArrayList.add(p);
+                            }
+                            else
+                            {
+                                adapter.notifyDataSetChanged();
+                            }
+                            //adapter.notifyDataSetChanged();
+                           /* adapter.notifyItemChanged();
+
+
+                            adapter = new PatientAdapter(getApplicationContext(), patientArrayList);
+                            mRecyclerView.setAdapter(adapter);*/
+
 
                         }
 
@@ -115,15 +229,47 @@ public class patient_list extends AppCompatActivity {
                         }
                     });
 
+                    mReference = mDatabase.getReference(medicalPath);
+
+
+                    mReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            lstMedicalDate.add(dataSnapshot.getKey());
+                            for(DataSnapshot ds : dataSnapshot.getChildren())
+                            {
+                                medicalInfo = ds.getValue(Medical_Info.class);
+                                medicalInfo.setDate(lstMedicalDate.get(counter));
+                                counter++;
+                                lstMedicalInfo.add(medicalInfo);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Toast t = Toast.makeText(getApplicationContext(), "Function hasn't fully been able to function yet!!", Toast.LENGTH_LONG);
+                            t.show();
+
+                        }
+                    });
+
 
 
                 }
+                adapter = new PatientAdapter(getApplicationContext(), patientArrayList, lstMedicalInfo, docID);
+                mRecyclerView.setAdapter(adapter);
+                if(countChild > childCounter) {patientArrayList.clear();}
+
+
+
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast t = Toast.makeText(getApplicationContext(), "Function hasn't fully been able to function yet!!", Toast.LENGTH_LONG);
+                t.show();
             }
         });
 
@@ -137,6 +283,7 @@ public class patient_list extends AppCompatActivity {
 
         findAllViews();
         init();
+        System.out.println("Im done with feeding database");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -151,34 +298,23 @@ public class patient_list extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
 
-
-
-
-
-
-
-
-        //Bind to Adapter
-        //Initialize List of Patients
-        //PatientList_Initiation();
-
-        //System.out.println("Start printing here: ");
-        /*for(Patient p : lstPatient)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch(item.getItemId())
         {
-            System.out.println(p.getPatient_Name());
-            System.out.println(p.getPatient_Type());
-        }*/
+            case android.R.id.home:
+                Intent intent = new Intent(patient_list.this, profile2_screen.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
 
-        /*//Fill out the data into adapter
-        PatientNameAdapater pa = new PatientNameAdapater(lstPatient);*/
-        //System.out.println(pa.getItemCount());
-
-        //Attach the adapter to recycler view
-        /*mRecyclerView.setAdapter(pa);
-
-        //Set layout manager to position items
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));*/
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

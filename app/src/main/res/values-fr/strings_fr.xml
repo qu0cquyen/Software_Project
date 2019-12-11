@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Automotive_UI</string>
+    <string name="btnLogin">Se Connecter</string>
+    <string name="btnLogout">Déconnexion</string>
+    <string name="btnParamedic">Mode Paramédic</string>
+    <string name="doctorType">Type:</string>
+    <string name="txtUserName">Nom d\'utilisateur</string>
+    <string name="txtPassword">Mot de passe</string>
+    <string name="p_btnPatientList">Liste des Patients</string>
+    <string name="user_location_permission_explanation">Une autorisation de localisation de l\'utilisateur est requise pour utiliser la carte.</string>
+    <string name="user_location_permission_not_granted">" L'utilisateur a refusé d'accorder une autorisation de localisation."</string>
+    <string name="lbPatientName">Nom du patient</string>
+    <string name="lbLogin">S\'identifier</string>
+    <string name="doctorSpec">Spécialité:</string>
+    <string name="backBtn">Retour</string>
+    <string name="bloodPressureLabel">" Tension artérielle:"</string>
+    <string name="heartRateLabel">"Rythme cardiaque: "</string>
+    <string name="mapBtn">Carte</string>
+    <string name="oxygenLabel">"Saturation d'oxygène: "</string>
+    <string name="patientInfoLabel">Info Patient</string>
+    <string name="respirationLabel">Respiration:</string>
+    <string name="speedLabel">"La vitesse:"</string>
+    <string name="speedviewLabel">"Compteur de vitesse:"</string>
+    <string name="hisDate">La Date</string>
+    <string name="hisDocNote">Notes du Médecin</string>
+
+    <!-- Patient List -->
+    <string name="patientList_TitleScreen">Liste des patients</string>
+    <string name="patientList_BloodPressure">Tension artérielle</string>
+    <string name="patientList_HeartRate">Rythme cardiaque</string>
+    <string name="patientList_oxygen">Oxygène</string>
+
+
+    <string name="patientInfo_TitleScreen">Information Patient</string>
+    <string name="patientInfo_Age">Âge</string>
+    <string name="patientInfo_EmergenContact">Coordonnées D\'Urgence</string>
+    <string name="patientInfo_History">Antécédents du Patient</string>
+    <string name="patientInfo_Name">Nom</string>
+    <string name="patientInfo_Phone">Numéro de Téléphone</string>
+    <string name="patientInfo_Sex">Sexe</string>
+    <string name="patientInfo_BloodPressure">Tension artérielle</string>
+    <string name="patientInfo_HeartRate">Rythme cardiaque</string>
+    <string name="patientInfo_oxygen">Oxygène</string>
+</resources>
