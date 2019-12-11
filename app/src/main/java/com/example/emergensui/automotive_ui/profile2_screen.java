@@ -137,12 +137,15 @@ public class profile2_screen extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(english == true){
-                    Locale locale = new Locale("fr","CA");
+                    Locale locale = new Locale("fr_CA");
                     Locale.setDefault(locale);
                     Configuration config = new Configuration();
                     config.locale = locale;
                     getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                     english = false;
+                    Intent intent = new Intent(profile2_screen.this, profile2_screen.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
 
                     langFlag.setImageResource(R.drawable.flagfr);
                     return;
@@ -154,7 +157,9 @@ public class profile2_screen extends AppCompatActivity {
                     config.locale = locale;
                     getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                     english = true;
-
+                    Intent intent = new Intent(profile2_screen.this, profile2_screen.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                     langFlag.setImageResource(R.drawable.flagen);
                     return;
                 }
