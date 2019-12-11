@@ -238,10 +238,12 @@ public class patient_list extends AppCompatActivity {
                             lstMedicalDate.add(dataSnapshot.getKey());
                             for(DataSnapshot ds : dataSnapshot.getChildren())
                             {
-                                medicalInfo = ds.getValue(Medical_Info.class);
-                                medicalInfo.setDate(lstMedicalDate.get(counter));
-                                counter++;
-                                lstMedicalInfo.add(medicalInfo);
+                                if(ds.getValue()!=null) {
+                                    medicalInfo = ds.getValue(Medical_Info.class);
+                                    medicalInfo.setDate(dataSnapshot.getKey());
+                                    counter++;
+                                    lstMedicalInfo.add(medicalInfo);
+                                }
                             }
                             adapter.notifyDataSetChanged();
                         }
