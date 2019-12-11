@@ -1,7 +1,7 @@
 package com.example.emergensui.automotive_ui;
 
 public class speedometer {
-    private float speed;
+    private String speed;
     private String blood_pressure;
     private String heart_rate;
     private String oxygen;
@@ -10,7 +10,7 @@ public class speedometer {
     public speedometer(){
 
     }
-    public speedometer(float speed, String blood_pressure,String heart_rate, String oxygen,String respiration) {
+    public speedometer(String speed, String blood_pressure,String heart_rate, String oxygen,String respiration) {
         this.speed= speed;
         this.blood_pressure= blood_pressure;
         this.heart_rate = heart_rate;
@@ -18,7 +18,7 @@ public class speedometer {
         this.respiration = respiration;
     }
 
-    public float getSpeed(){ return speed; }
+    public String getSpeed(){ return speed; }
     public void setSpeed(String profession_id){
         this.speed= speed;
     }

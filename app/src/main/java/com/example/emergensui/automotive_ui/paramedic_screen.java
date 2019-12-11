@@ -50,6 +50,7 @@ public class paramedic_screen extends AppCompatActivity {
             }
         });
 
+        //getSpeedometerData();
         test();
     }
 
@@ -73,8 +74,7 @@ public class paramedic_screen extends AppCompatActivity {
         speedometer.setMinSpeed(0);
         speedometer.setMaxSpeed(200);
 
-
-        speedometer.speedTo(speedv,20);
+        speedometer.speedTo(speedv);
 
     }
     private void getSpeedometerData(){
@@ -99,7 +99,7 @@ public class paramedic_screen extends AppCompatActivity {
 
 
 
-                            speedometer.speedTo(s.getSpeed());
+                            speedometer.speedTo(Integer.valueOf(s.getSpeed()));
                             heart_value.setText(s.getHeart_rate());
                             blood_value.setText(s.getBlood_pressure());
                             oxygen_value.setText(s.getOxygen());
@@ -140,8 +140,6 @@ public class paramedic_screen extends AppCompatActivity {
                 new DataPoint(lastX++, RAMDOM.nextDouble() * 100d),
         });
         graph.addSeries(series);
-
-
     }
 }
 
