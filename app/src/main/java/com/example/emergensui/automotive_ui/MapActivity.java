@@ -5,6 +5,9 @@ import android.os.Bundle;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -80,6 +83,10 @@ public class MapActivity extends AppCompatActivity implements
 
         // Mapbox access token is configured here. This needs to be called in mapview activity
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
+
+        // Hide status bar for full screen map
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Contains the mapview layout, called after access token configuration.
         setContentView(R.layout.activity_map);
