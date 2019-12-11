@@ -1,24 +1,30 @@
 package com.example.emergensui.automotive_ui.Class;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Patient {
+public class Patient implements Serializable {
     private String DoB;
     private String Patient_Type;
     private String Room_Number;
     private String Patient_Name;
+    private String Patient_Sex;
+    private String Phone_Number;
+    private String Patient_ID;
     private int pos;
 
-    private List<Patient> lstPatient;
+    private ArrayList<Patient> lstPatient;
 
     public Patient(){}
 
-    public Patient(String dob, String patient_type, String room_number, String Name)
+    public Patient(String dob, String patient_type, String room_number, String Name, String sex, String phone_Number)
     {
         this.DoB = dob;
         this.Patient_Type = patient_type;
         this.Room_Number = room_number;
         this.Patient_Name = Name;
+        this.Patient_Sex = sex;
+        this.Phone_Number = phone_Number;
     }
 
 
@@ -56,12 +62,12 @@ public class Patient {
 
     public String getPatient_Name(){return Patient_Name;}
 
-    public void setLstPatient(List<Patient> lst)
+    public void setLstPatient(ArrayList<Patient> lst)
     {
         this.lstPatient = lst;
     }
 
-    public List<Patient> getLstPatient()
+    public ArrayList<Patient> getLstPatient()
     {
         return this.lstPatient;
     }
@@ -72,5 +78,30 @@ public class Patient {
 
     public void setPos(int pos) {
         this.pos = pos;
+    }
+
+    public String getPatient_Sex() {
+        return Patient_Sex;
+    }
+
+    public void setPatient_Sex(String patient_Sex) {
+        Patient_Sex = patient_Sex;
+    }
+
+    public String getPhone_Number() {
+        return Phone_Number;
+    }
+
+    public void setPhone_Number(String phone)
+    {
+        this.Phone_Number = phone;
+    }
+
+    public String getPatient_ID() {
+        return Patient_ID;
+    }
+
+    public void setPatient_ID(String patient_ID) {
+        Patient_ID = patient_ID;
     }
 }

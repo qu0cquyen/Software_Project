@@ -1,6 +1,8 @@
 package com.example.emergensui.automotive_ui;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnParamedic;
     FirebaseAuth mAuth;
 
+    SharedPreferences sharedPref;
+
     private CoordinatorLayout mCLayout;
 
 
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //processPref();
         findAllView();
 
         //Hide keyboard
@@ -57,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 appLogin();
+                savePref();
 
             }
         });
@@ -71,6 +77,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
+
+        loadPref();
+
+    }
+
+   /* private void processPref() {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        String user_name = settings.getString("user_name_pref", "1");
+        String password = settings.getString("password_pref", "1");
+    }*/
+
+    private void loadPref() {
+        String userName = sharedPref.getString("user_name", "");
+        String password = sharedPref.getString("password", "");
+
+        txtUserName.setText(userName);
+        txtPassword.setText(password);
+    }
+
+    private void savePref() {
+        SharedPreferences.Editor edit = sharedPref.edit();
+        edit.putString("user_name", txtUserName.getText().toString());
+        edit.putString("password", txtPassword.getText().toString());
+        edit.commit();
 
     }
 
@@ -111,5 +141,7 @@ public class MainActivity extends AppCompatActivity {
         txtPassword = findViewById(R.id.txtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnParamedic = findViewById(R.id.btnParamedic);
+
+        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
     }
 }

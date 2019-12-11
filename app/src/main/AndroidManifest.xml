@@ -10,15 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MapActivity"></activity>
+        <activity android:name=".patient_information"
+                  android:label="@string/patientInfo_TitleScreen"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".doc_nur_contacts"
+                android:theme="@style/AppFullScreenTheme"/>
         <activity
             android:name=".patient_list"
-            android:label="@string/title_activity_patient_list"
+            android:label="@string/patientList_TitleScreen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".paramedic_screen"
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".profile2_screen"
+            android:configChanges="locale|orientation|keyboardHidden"
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".splash_screen"

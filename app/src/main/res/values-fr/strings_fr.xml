@@ -24,10 +24,22 @@
     <string name="speedviewLabel">"Compteur de vitesse:"</string>
     <string name="hisDate">La Date</string>
     <string name="hisDocNote">Notes du Médecin</string>
+
+    <!-- Patient List -->
+    <string name="patientList_TitleScreen">Liste des patients</string>
+    <string name="patientList_BloodPressure">Tension artérielle</string>
+    <string name="patientList_HeartRate">Rythme cardiaque</string>
+    <string name="patientList_oxygen">Oxygène</string>
+
+
+    <string name="patientInfo_TitleScreen">Information Patient</string>
     <string name="patientInfo_Age">Âge</string>
     <string name="patientInfo_EmergenContact">Coordonnées D\'Urgence</string>
     <string name="patientInfo_History">Antécédents du Patient</string>
     <string name="patientInfo_Name">Nom</string>
     <string name="patientInfo_Phone">Numéro de Téléphone</string>
     <string name="patientInfo_Sex">Sexe</string>
+    <string name="patientInfo_BloodPressure">Tension artérielle</string>
+    <string name="patientInfo_HeartRate">Rythme cardiaque</string>
+    <string name="patientInfo_oxygen">Oxygène</string>
 </resources>

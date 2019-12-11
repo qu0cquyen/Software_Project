@@ -1,4 +1,4 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="fab_patientInfo">100</dimen>
+    <dimen name="fab_patientInfo">16dp</dimen>
 </resources>

@@ -8,86 +8,130 @@
     tools:context=".patient_information"
     tools:showIn="@layout/activity_patient_information">
 
-    <ImageView
-        android:id="@+id/patient_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintHorizontal_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars[0]" />
-
-    <TextView
-        android:id="@+id/lblPatientInfo_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintLeft_toRightOf="@+id/patient_img"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
-
-    <TextView
-        android:id="@+id/lblPatientInfo_Age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintLeft_toRightOf="@+id/patient_img"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Name"
-        app:layout_constraintVertical_bias="0.024" />
-
-    <TextView
-        android:id="@+id/lblPatientInfo_Sex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sex:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintLeft_toRightOf="@+id/patient_img"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Age"
-        app:layout_constraintVertical_bias="0.024" />
-
-    <TextView
-        android:id="@+id/lblPatientInfo_EmergencyContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Emergency Contact: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintLeft_toRightOf="@+id/patient_img"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Sex"
-        app:layout_constraintVertical_bias="0.028" />
-
-    <TextView
-        android:id="@+id/lblPatientInfo_EmergencyNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone Number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintLeft_toRightOf="@+id/lblPatientInfo_EmergencyContact"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/PatientInfo_RecyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/infoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_img"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/patient_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/infoView"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toTopOf="@+id/infoView"
+            app:layout_constraintVertical_bias="0.2"
+            app:srcCompat="@drawable/male_patient_icon"
+            tools:srcCompat="@drawable/male_patient_icon" />
+
+        <TextView
+            android:id="@+id/lblPatientInfo_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientInfo_Name"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintLeft_toRightOf="@+id/patient_img"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toTopOf="@+id/infoView"
+            app:layout_constraintVertical_bias="0.01" />
+
+        <TextView
+            android:id="@+id/lblPatientInfo_Age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientInfo_Age"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintLeft_toRightOf="@+id/patient_img"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Name"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/lblPatientInfo_Sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientInfo_Sex"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintLeft_toRightOf="@+id/patient_img"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Age"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <TextView
+            android:id="@+id/lblPatientInfo_EmergencyContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientInfo_EmergenContact"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintLeft_toRightOf="@+id/patient_img"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_Sex"
+            app:layout_constraintVertical_bias="0.028" />
+
+        <TextView
+            android:id="@+id/lblPatientInfo_EmergencyNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:text="@string/patientInfo_Phone"
+            app:layout_constraintBottom_toBottomOf="@+id/infoView"
+            app:layout_constraintRight_toRightOf="@+id/infoView"
+            app:layout_constraintTop_toTopOf="@+id/infoView"
+            app:layout_constraintVertical_bias="0.599" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lstView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1">
+
+        <TextView
+            android:id="@+id/lblPatientInfo_History"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patientInfo_History"
+            android:textSize="25sp"
+            android:fontFamily="@font/montserrat_bold"
+            app:layout_constraintBottom_toTopOf="@+id/PatientInfo_RecyclerView"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintLeft_toLeftOf="@+id/lstView"
+            app:layout_constraintRight_toRightOf="@+id/lstView"
+            app:layout_constraintTop_toTopOf="@+id/lstView"
+             />
+
+    <!-- Add a View contains the recylcer view -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/PatientInfo_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@id/lstView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lstView"
+            app:layout_constraintRight_toRightOf="@+id/lstView"
+            app:layout_constraintTop_toBottomOf="@+id/lblPatientInfo_History"
+            app:layout_constraintVertical_bias="0.36" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
