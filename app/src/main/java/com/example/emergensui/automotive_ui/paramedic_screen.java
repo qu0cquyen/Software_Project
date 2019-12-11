@@ -56,9 +56,7 @@ public class paramedic_screen extends AppCompatActivity {
 
     private void test(){
         testWithRandom();
-
         testGraph();
-
     }
     private void getId(){
         btnBack = (Button) findViewById(R.id.btnBack);
@@ -70,13 +68,6 @@ public class paramedic_screen extends AppCompatActivity {
         respiration_value = (TextView)findViewById(R.id.respiration_value);
     }
 
-    private void testSpeedometer(){
-        speedometer.setMinSpeed(0);
-        speedometer.setMaxSpeed(200);
-
-        speedometer.speedTo(speedv);
-
-    }
     private void getSpeedometerData(){
         Bundle extras = getIntent().getExtras();
         database = FirebaseDatabase.getInstance();
@@ -99,7 +90,7 @@ public class paramedic_screen extends AppCompatActivity {
 
 
 
-                            speedometer.speedTo(Integer.valueOf(s.getSpeed()));
+                            speedometer.speedTo(s.getSpeed());
                             heart_value.setText(s.getHeart_rate());
                             blood_value.setText(s.getBlood_pressure());
                             oxygen_value.setText(s.getOxygen());
@@ -120,7 +111,9 @@ public class paramedic_screen extends AppCompatActivity {
     }
     private void testWithRandom(){
         speedv=RAMDOM.nextInt(200);
-        testSpeedometer();
+        speedometer.setMinSpeed(0);
+        speedometer.setMaxSpeed(200);
+        speedometer.speedTo(speedv);
         String heartV = (RAMDOM.nextInt(40)+80)+ " bps";
         heart_value.setText(heartV);
         String bloodV = (RAMDOM.nextInt(100)+60)+ "/" + (RAMDOM.nextInt(40)+20)+ " mmHg";
