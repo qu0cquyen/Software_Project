@@ -31,7 +31,10 @@
     <string name="patientList_HeartRate">Rythme cardiaque</string>
     <string name="patientList_oxygen">Oxygène</string>
 
+    <!-- Department Contacts -->
+    <string name="departmentContact">Contact Département</string>
 
+    <!-- Patient Info -->
     <string name="patientInfo_TitleScreen">Information Patient</string>
     <string name="patientInfo_Age">Âge</string>
     <string name="patientInfo_EmergenContact">Coordonnées D\'Urgence</string>

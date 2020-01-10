@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.emergensui.automotive_ui.Class.Doctor;
+import com.example.emergensui.automotive_ui.Class.Specialization;
 import com.example.emergensui.automotive_ui.Class.UData;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -84,8 +85,23 @@ public class profile2_screen extends AppCompatActivity {
                             ud = dataSnapshot.getValue(Doctor.class);
 
                             txtName.setText(ud.getName());
-                            txtSpec.setText(ud.getSpec_ID());
                             txtType.setText(user.getType());
+
+                            String specPath = "Specialization/" + ud.getSpec_ID();
+                            mDataRef = mDatabase.getReference(specPath);
+
+                            mDataRef.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    Specialization sp = dataSnapshot.getValue(Specialization.class);
+                                    txtSpec.setText(sp.getTypeName());
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
                         }
 
                         @Override
@@ -102,6 +118,50 @@ public class profile2_screen extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void setLanguage()
+    {
+        if(getResources().getConfiguration().locale.toString().equalsIgnoreCase("en_US"))
+        {
+            langFlag.setImageResource(R.drawable.flagen);
+        }
+
+        if(getResources().getConfiguration().locale.toString().equals("fr"))
+        {
+            langFlag.setImageResource(R.drawable.flagfr);
+        }
+    }
+
+    private void switchLanguage()
+    {
+        Configuration config = new Configuration();
+        Toast t = Toast.makeText(getApplicationContext(), "Language Changed", Toast.LENGTH_SHORT);
+        System.out.println(getResources().getConfiguration().locale.toString());
+        if(getResources().getConfiguration().locale.toString().equalsIgnoreCase("en_US"))
+        {
+            locale = new Locale("fr");
+            Locale.setDefault(locale);
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+            t.show();
+            langFlag.setImageResource(R.drawable.flagfr);
+            recreate();
+            return;
+        }
+
+        if(getResources().getConfiguration().locale.toString().equals("fr"))
+        {
+            locale = new Locale("en_US");
+            Locale.setDefault(locale);
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+            t.show();
+            langFlag.setImageResource(R.drawable.flagen);
+            recreate();
+            return;
+        }
+
     }
 
     @Override
@@ -121,6 +181,9 @@ public class profile2_screen extends AppCompatActivity {
 
         //Initialize views
         findAllViews();
+
+        //Initialize flag for the 1st time
+        setLanguage();
 
         //Get user database and show on UI
         getUserDatabase();
@@ -160,36 +223,7 @@ public class profile2_screen extends AppCompatActivity {
         langFlag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Configuration config = new Configuration();
-                Toast t = Toast.makeText(getApplicationContext(), "Language Changed", Toast.LENGTH_SHORT);
-                System.out.println(getResources().getConfiguration().locale.toString());
-
-                switch(getResources().getConfiguration().locale.toString())
-                {
-                    case "en_US":
-                    case "en":
-                        locale = new Locale("fr");
-                        Locale.setDefault(locale);
-                        config.locale = locale;
-                        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-
-                        t.show();
-                        langFlag.setImageResource(R.drawable.flagfr);
-                        recreate();
-                        break;
-
-                    case "fr":
-                        locale = new Locale("en");
-                        Locale.setDefault(locale);
-                        config.locale = locale;
-                        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-
-                        t.show();
-                        langFlag.setImageResource(R.drawable.flagen);
-                        recreate();
-                        break;
-                }
-
+                switchLanguage();
 
             }
         });

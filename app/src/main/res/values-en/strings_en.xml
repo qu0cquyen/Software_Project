@@ -40,6 +40,9 @@
     <string name="hisDate">Date</string>
     <string name="hisDocNote">Doctor\'s Notes</string>
 
+    <!-- Department Contacts -->
+    <string name="departmentContact">Department Contact</string>
+
     <!-- Mapbox Token -->
     <string name="mapbox_access_token" translatable="false">pk.eyJ1IjoiZW1lcmdlbnN1aSIsImEiOiJjazJ1dTR1aDQxYTkwM25tbnpjZnp6MXhkIn0.icc2BLwZFIRMw1OUCUdQ-g</string>
     <!-- Mapbox Strings -->

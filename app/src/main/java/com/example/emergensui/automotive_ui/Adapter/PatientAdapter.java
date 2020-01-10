@@ -6,12 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.emergensui.automotive_ui.Class.Medical_Info;
 import com.example.emergensui.automotive_ui.Class.Patient;
 import com.example.emergensui.automotive_ui.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,22 +26,25 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
 {
 
     private Context context;
-    private List<Patient> lstPatient;
-    private List<Medical_Info> lstMedical;
     private String docID;
 
-    private RecyclerView.RecycledViewPool recycledViewPool;
+    private Patient p;
+
+    private List<String> lstPatientID;
+    private List<Patient> lstPatient;
 
     private int toggle = 0;
+    private int flag = 0;
 
-    public PatientAdapter(Context context, ArrayList<Patient> lstp, ArrayList<Medical_Info> lstMed, String docID)
+    FirebaseDatabase mDatabase;
+    DatabaseReference mReferences;
+
+    public PatientAdapter(Context context, ArrayList<String> lst, String docID)
     {
         this.context = context;
-        this.lstPatient = lstp;
-        this.lstMedical = lstMed;
+        this.lstPatientID = lst;
         this.docID = docID;
-
-        recycledViewPool = new RecyclerView.RecycledViewPool();
+        this.lstPatient = new ArrayList<>();
     }
 
 
@@ -48,61 +56,85 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PatientHolder holder, int position) {
-        final Patient p = lstPatient.get(position);
-        Medical_Info med = lstMedical.get(position);
-        holder.setDetails(p);
+    public void onBindViewHolder(@NonNull final PatientHolder holder, final int position) {
+        final String patientID = lstPatientID.get(position);
 
-        //int poss = p.getPos();
+        mDatabase = FirebaseDatabase.getInstance();
+        mReferences = mDatabase.getReference("Patient/" + patientID);
 
-        List<Patient> lstpp = new ArrayList<>();
-        lstpp.add(p);
+        mReferences.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Patient p = dataSnapshot.getValue(Patient.class);
+                p.setPatient_ID(patientID);
+                holder.setDetails(p.getPatient_Name());
+                if(flag == 0) //Gets all the patient when the app runs for the 1st time
+                {
+                    lstPatient.add(p);
+                }
+            }
 
-        List<Medical_Info> lsm = new ArrayList<>();
-        lsm.add(med);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        PatientChildAdapter pca = new PatientChildAdapter(lstpp, lsm, context, docID);
+            }
+        });
+
+        System.out.println(lstPatient.size());
+
+        ArrayList<String> lstPsID = new ArrayList<>();
+        lstPsID.add(patientID);
+
+        PatientChildAdapter pca = new PatientChildAdapter(context, lstPsID, docID);
 
         holder.childRecycler.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         holder.childRecycler.setAdapter(pca);
 
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (toggle)
-                {
-                    case 1:
-                        toggle = 0;
-                        notifyItemChanged(p.getPos());
-                        break;
-
-                    case 0:
-                        toggle = 1;
-                        notifyItemChanged(p.getPos());
-                        break;
-                }
-
+                holder.setChildVisible();
             }
-
         });
-
 
     }
 
     @Override
     public int getItemCount() {
-        return (lstPatient == null)? 0 : lstPatient.size();
+        return lstPatientID.size();
+    }
+
+    //String filter
+    public void stringFilter(String searchString)
+    {
+        flag = 1; //Prevents add the patients again since they existed in the array
+        ArrayList<Patient> lst = new ArrayList<>();
+        lst.addAll(lstPatient);
+        lstPatientID.clear();
+        if(searchString.length() == 0)
+        {
+            for(Patient p : lst)
+            {
+                lstPatientID.add(p.getPatient_ID());
+            }
+        }
+        else
+        {
+            for(Patient p : lst)
+            {
+                if(p.getPatient_Name().toLowerCase(Locale.getDefault()).contains(searchString.toLowerCase(Locale.getDefault())))
+                {
+                    lstPatientID.add(p.getPatient_ID());
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     class PatientHolder extends RecyclerView.ViewHolder
     {
 
         private TextView txtPatientName;
-        /*private TextView txtPatientRoom;
-        private TextView txtPatientType;
-        private TextView txtPatientDoB;*/
-        private View subItems;
         private RecyclerView childRecycler;
 
 
@@ -110,29 +142,30 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.PatientH
         {
             super(itemView);
             txtPatientName = itemView.findViewById(R.id.lbPatientName);
-            /*txtPatientRoom = itemView.findViewById(R.id.lblPatientRoom);
-            txtPatientType = itemView.findViewById(R.id.lblPatientTypeValue);
-            txtPatientDoB = itemView.findViewById(R.id.lblPatientDoB_Value);*/
-            //subItems = itemView.findViewById(R.id.sub_items);
             childRecycler = itemView.findViewById(R.id.sub_items);
-
-            //childRecycler.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
 
         }
 
-        void setDetails(Patient p)
+        void setDetails(String patientName)
         {
-            txtPatientName.setText(p.getPatient_Name());
-            /*txtPatientRoom.setText(p.getRoom_Number());
-            txtPatientType.setText(p.getPatient_Type());
-            txtPatientDoB.setText(p.getDoB());*/
+            txtPatientName.setText(patientName);
 
             if(toggle == 1) {childRecycler.setVisibility(View.VISIBLE);}
             else{childRecycler.setVisibility(View.GONE);}
-            //childRecycler.setVisibility(toggle? View.VISIBLE : View.GONE);
+        }
 
-
-
+        void setChildVisible()
+        {
+            if(childRecycler.getVisibility() == View.VISIBLE)
+            {
+                childRecycler.setVisibility(View.GONE);
+                return;
+            }
+            if(childRecycler.getVisibility() == View.GONE)
+            {
+                childRecycler.setVisibility(View.VISIBLE);
+                return;
+            }
         }
     }
 }

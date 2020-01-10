@@ -3,16 +3,19 @@ package com.example.emergensui.automotive_ui.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.emergensui.automotive_ui.Class.Medical_Info;
-import com.example.emergensui.automotive_ui.Class.Patient;
 import com.example.emergensui.automotive_ui.R;
 import com.example.emergensui.automotive_ui.patient_information;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -24,27 +27,19 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
 {
 
     private Context context;
-    List<Patient> lstPatient;
-    List<Medical_Info> lstMedical;
-    Patient p;
+    List<String> pIDlst;
     String docID;
 
-    public PatientChildAdapter(List<Patient> lsp, List<Medical_Info> lstMed, Context context, String docID)
+    FirebaseDatabase mDatabase;
+    DatabaseReference mReference;
+
+
+    public PatientChildAdapter(Context context, List<String> lstPatientID, String docID)
     {
         this.context = context;
-        this.lstPatient = lsp;
-        this.lstMedical = lstMed;
+        this.pIDlst = lstPatientID;
         this.docID = docID;
-
     }
-
-    public PatientChildAdapter(Patient patient, Context context)
-    {
-        this.context = context;
-        this.p = patient;
-
-    }
-
 
     @NonNull
     @Override
@@ -54,36 +49,45 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PatientChildHolder holder, int position) {
-        final Patient pa = lstPatient.get(position);
-        Medical_Info med = lstMedical.get(position);
-        //System.out.println(pa.getPatient_ID());
-        holder.setDetails(med);
-        //count++;
+    public void onBindViewHolder(@NonNull final PatientChildHolder holder, int position) {
+        final String pID = pIDlst.get(position);
+        String medicalPath = "Medical_Info/" + pID;
+
+        System.out.println(pID);
+
+        mDatabase = FirebaseDatabase.getInstance();
+        mReference = mDatabase.getReference(medicalPath);
+
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Medical_Info mi = dataSnapshot.getValue(Medical_Info.class);
+                holder.setDetails(mi);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, patient_information.class);
-                Bundle b = new Bundle();
-                b.putSerializable("Patient", pa);
-                System.out.println(pa.getPatient_ID());
-                intent.putExtras(b);
-                intent.putExtra("Doc_ID", docID);
+                intent.putExtra("PatientID", pID);
+                intent.putExtra("DoctorID", docID);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-                notifyItemChanged(pa.getPos());
+
             }
         });
-
-
-
-
-
     }
 
     @Override
     public int getItemCount() {
-        return (lstPatient == null)? 0 : lstPatient.size();
+        return (pIDlst == null)? 0 : pIDlst.size();
     }
 
     class PatientChildHolder extends RecyclerView.ViewHolder
@@ -94,7 +98,6 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
         private TextView txtPatientDoB;
         private CardView cardView;
 
-
         PatientChildHolder(@NonNull View itemView)
         {
             super(itemView);
@@ -102,7 +105,6 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
             txtPatientType = itemView.findViewById(R.id.lblPatientHeartRate);
             txtPatientDoB = itemView.findViewById(R.id.lblPatientOxygen);
             cardView = itemView.findViewById(R.id.childCard);
-
         }
 
         void setDetails(Medical_Info med)
@@ -120,14 +122,6 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
             cardView.setUseCompatPadding(true);
             cardView.setPreventCornerOverlap(true);
             cardView.setCardBackgroundColor(Color.parseColor("#add8e6"));
-
-
-
-
-
-
-
-
         }
     }
 }
