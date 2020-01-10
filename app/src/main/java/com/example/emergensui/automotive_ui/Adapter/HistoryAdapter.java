@@ -8,6 +8,11 @@ import android.widget.TextView;
 
 import com.example.emergensui.automotive_ui.Class.Visit_Doctor;
 import com.example.emergensui.automotive_ui.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -17,15 +22,21 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryHolder> {
 
     private Context context;
-    private String date;
-    private ArrayList<Visit_Doctor> lstVisit;
+    private String docID;
+    private String patientID;
+    private ArrayList<String> lstVisit;
+
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReference;
 
 
-    public HistoryAdapter(Context context, ArrayList<Visit_Doctor> lstVisitDoc)
+    public HistoryAdapter(Context context, ArrayList<String> lstDate, String docID, String patientID)
     {
         this.context = context;
-        this.lstVisit = lstVisitDoc;
-        System.out.println("???????????????????????????");
+        this.lstVisit = lstDate;
+        this.docID = docID;
+        this.patientID = patientID;
+
     }
 
     @NonNull
@@ -36,17 +47,32 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryAdapter.HistoryHolder holder, int position) {
-        Visit_Doctor vd = lstVisit.get(position);
-        System.out.println(vd.getDoc_note());
-        holder.setDetails(vd);
+    public void onBindViewHolder(@NonNull final HistoryAdapter.HistoryHolder holder, int position) {
+        final String date = lstVisit.get(position);
+        String path = "Visit_Doctor/" + docID + "/" + patientID + "/" + date;
 
+        mDatabase = FirebaseDatabase.getInstance();
+        mReference = mDatabase.getReference(path);
+
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Visit_Doctor vd = dataSnapshot.getValue(Visit_Doctor.class);
+                vd.setDate(date);
+                holder.setDetails(vd);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return (lstVisit == null)? 0 : lstVisit.size();
+        return lstVisit.size();
     }
 
     class HistoryHolder extends RecyclerView.ViewHolder

@@ -3,13 +3,12 @@ package com.example.emergensui.automotive_ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.emergensui.automotive_ui.Adapter.HistoryAdapter;
 import com.example.emergensui.automotive_ui.Class.Patient;
-import com.example.emergensui.automotive_ui.Class.Visit_Doctor;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,11 +38,7 @@ public class patient_information extends AppCompatActivity {
     ImageView eImageView;
 
     String docID;
-    String date;
-    int counter = 0;
-    ArrayList<Visit_Doctor> lstVisitDoc;
-    ArrayList<String> lstDate;
-    Visit_Doctor vd;
+    String patientID;
     Patient p;
 
     HistoryAdapter hisAdapter;
@@ -62,14 +57,40 @@ public class patient_information extends AppCompatActivity {
         eImageView = findViewById(R.id.patient_img);
     }
 
-    private void displayInfo()
+    private void init()
     {
-        //Getting patient information from previous intent
+        //Gets DocID and PatientID
         Bundle b = getIntent().getExtras();
-        p = (Patient)b.getSerializable("Patient");
-        docID = b.getString("Doc_ID");
+        docID = b.getString("DoctorID");
+        patientID = b.getString("PatientID");
 
+        //Initialize database
+        mDatabase = FirebaseDatabase.getInstance();
+    }
 
+    private void retrievePatient()
+    {
+        String patientPath = "Patient/" + patientID;
+
+        //Access to database with specified path
+        mReference = mDatabase.getReference(patientPath);
+
+        mReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                p = dataSnapshot.getValue(Patient.class);
+                displayPatientInfo(p);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void displayPatientInfo(Patient p)
+    {
         //Set profile's image based on Sex
         if(p.getPatient_Sex().equals("Male"))
         {
@@ -90,73 +111,33 @@ public class patient_information extends AppCompatActivity {
 
         int age = currentYear - Integer.parseInt(year);
         txtAge.setText(String.valueOf(age));
-        System.out.println(p.getPatient_ID() + "This is from here");
-
-        //Initialize lstDate
-        lstDate = new ArrayList<>();
-        //lstVisitDoc = new ArrayList<>();
-        rvHistory.setLayoutManager(new LinearLayoutManager(this));
-        rvHistory.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        //Retrieve Doc's note
-        retrieve(docID, p.getPatient_ID());
     }
 
-    //Retrieve data from database
-    private void retrieve(String doc_id, String patient_ID)
+    private void retrieveDocNote()
     {
-        //Get Doctor's Note
-        final String path = "Visit_Doctor/" + doc_id + "/" + patient_ID;
-        System.out.println(path);
+        String docNotePath = "Visit_Doctor/" + docID + "/" + patientID;
 
-        mDatabase = FirebaseDatabase.getInstance();
-
-        mReference = mDatabase.getReference(path);
+        mReference = mDatabase.getReference(docNotePath);
 
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                lstVisitDoc = new ArrayList<>();
-                for(DataSnapshot ds : dataSnapshot.getChildren())
+                ArrayList<String> lstDate = new ArrayList<>();
+                for(DataSnapshot dsh : dataSnapshot.getChildren())
                 {
-                    String newPath = path + "/" + ds.getKey();
-                    lstDate.add(ds.getKey());
-
-                    mReference = mDatabase.getReference(newPath);
-
-                    mReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            vd = dataSnapshot.getValue(Visit_Doctor.class);
-                            vd.setDate(lstDate.get(counter));
-                            counter++;
-                            lstVisitDoc.add(vd);
-
-
-
-                            hisAdapter = new HistoryAdapter(getApplicationContext(), lstVisitDoc);
-                            //System.out.println(lstDocNote);
-                            rvHistory.setAdapter(hisAdapter);
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Toast t = Toast.makeText(getApplicationContext(), "Function hasn't fully been able to function yet!!", Toast.LENGTH_LONG);
-                            t.show();
-                        }
-                    });
+                    lstDate.add(dsh.getKey());
                 }
-
+                hisAdapter = new HistoryAdapter(getApplicationContext(), lstDate, docID, patientID);
+                rvHistory.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                rvHistory.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
+                rvHistory.setAdapter(hisAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast t = Toast.makeText(getApplicationContext(), "Function hasn't fully been able to function yet!!", Toast.LENGTH_LONG);
-                t.show();
+
             }
         });
-
-
     }
 
     @Override
@@ -166,22 +147,21 @@ public class patient_information extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        /*fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = findViewById(R.id.fab_patient_info);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(patient_information.this, doc_nur_contacts.class);
+                startActivity(intent);
             }
-        });*/
+        });
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Initialize components
         findAllView();
-        displayInfo();
+        init();
+        retrievePatient();
+        retrieveDocNote();
     }
 
     @Override
@@ -192,9 +172,6 @@ public class patient_information extends AppCompatActivity {
             case android.R.id.home:
                 Intent intent = new Intent(patient_information.this, patient_list.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                Bundle b = new Bundle();
-                b.putSerializable("Patient", p);
-                intent.putExtras(b);
                 intent.putExtra("Doc_ID", docID);
                 startActivity(intent);
                 finish();

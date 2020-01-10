@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.emergensui.automotive_ui">
 
+    <!-- Permission -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,5 +43,5 @@
             android:name=".MainActivity"
             android:theme="@style/AppFullScreenTheme" />
     </application>
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 </manifest>
