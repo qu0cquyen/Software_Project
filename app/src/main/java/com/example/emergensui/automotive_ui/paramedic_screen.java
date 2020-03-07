@@ -55,6 +55,8 @@ public class paramedic_screen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mapIntent = new Intent(paramedic_screen.this, MapActivity.class);
+                //Intent mapIntent = new Intent(paramedic_screen.this, google_map.class);
+                //Intent mapIntent = new Intent(paramedic_screen.this, embedded_navigation.class);
                 startActivity(mapIntent);
             }
         });

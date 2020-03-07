@@ -60,4 +60,11 @@
     <string name="backBtn">Back</string>
     <string name="mapBtn">Map</string>
 
+    <!-- Sliding Item -->
+    <string name="hos_name">Hospital Name</string>
+    <string name="hos_address">Hospital Address </string>
+    <string name="hos_phone">Hospital Phone</string>
+
+
+
 </resources>
