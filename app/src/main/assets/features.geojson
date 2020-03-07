@@ -1,0 +1,2931 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "499 Raglan Street North, Renfrew, Ontario K7V 1P6, Canada",
+        "name": "Renfrew Victoria Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 432-4851"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.696722,
+          45.482622
+        ],
+        "type": "Point"
+      },
+      "id": "address.1077887352921206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "2757 King Street, Hamilton, Ontario L8G 2G3, Canada",
+        "name": "St. Joseph's Healthcare Hamilton - King Campus",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 522-1155"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.773982,
+          43.221362
+        ],
+        "type": "Point"
+      },
+      "id": "address.1248413728900164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "10 Angeline Street North, Kawartha Lakes, Ontario K9V 3M8, Canada",
+        "name": "Ross Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 324-6111"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.750955,
+          44.353106
+        ],
+        "type": "Point"
+      },
+      "id": "address.1287185293288922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "500 Whites Rd, Minto, Ontario, Canada",
+        "name": "North Wellington Health Care - Palmerston",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 343-2030"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.843216,
+          43.838694
+        ],
+        "type": "Point"
+      },
+      "id": "address.1290788119065300"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "555 Finch Avenue West, Toronto, Ontario M2R 3X2, Canada",
+        "name": "North York General Hospital - Branson ",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 633-9420"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.447234,
+          43.771856
+        ],
+        "type": "Point"
+      },
+      "id": "address.129544698536148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "167 Rolph Street, Tillsonburg, Ontario N4G 3Z4, Canada",
+        "name": "Tillsonburg District Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 842-3611"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.735257,
+          42.86323
+        ],
+        "type": "Point"
+      },
+      "id": "address.1323736613134670"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "911 Queen's Boulevard, Kitchener, Ontario N2M 1B3, Canada",
+        "name": "St. Mary's General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 744-3311"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.50148,
+          43.438007
+        ],
+        "type": "Point"
+      },
+      "id": "address.1333999720722764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "194 Talbot Street West, Leamington, Ontario N8H 1N9, Canada",
+        "name": "Erie Shores Healthcare",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 326-2373"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.614455,
+          42.048784
+        ],
+        "type": "Point"
+      },
+      "id": "address.1403564566695778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "242 King Street, Batawa, Ontario K8V 6N8, Canada",
+        "name": "Quinte Healthcare - Trenton Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 392-2540"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.588148,
+          44.099758
+        ],
+        "type": "Point"
+      },
+      "id": "address.142390542507226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "310 Juliana Drive, Woodstock, Ontario N4V 1H6, Canada",
+        "name": "Woodstock General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 421-4211"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.754094,
+          43.107299
+        ],
+        "type": "Point"
+      },
+      "id": "address.1446912577614122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "320 College Street North, West Grey, Ontario, Canada",
+        "name": "South Bruce Grey Health Centre - Durham",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 369-2340"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.82888,
+          44.179701
+        ],
+        "type": "Point"
+      },
+      "id": "address.1488363792922868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "566 Louise St S, Chesterville, Ontario, Canada",
+        "name": "Winchester District Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 774-2420"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.352351,
+          45.088282
+        ],
+        "type": "Point"
+      },
+      "id": "address.1591946273798998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1h Manor Lane, Bancroft, Ontario, Canada",
+        "name": "Quinte Healthcare - North Hastings",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 332-2825"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.864259,
+          45.055142
+        ],
+        "type": "Point"
+      },
+      "id": "address.1595012408473606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "street",
+        "address": "217 Turcotte Park Rd, Mattawa, ON P0H 1V0",
+        "name": "Mattawa General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 744-5511"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.713229,
+          46.310861
+        ],
+        "type": "Point"
+      },
+      "id": "address.1627776079111802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "421 Shepherdson Road, Temiskaming Shores, Ontario, Canada",
+        "name": "Temiskaming Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 647-8121"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.692398,
+          47.495101
+        ],
+        "type": "Point"
+      },
+      "id": "address.1688091589952158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "26 Peninsula Road, Marathon, Ontario, Canada",
+        "name": "Wilson Memorial General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 229-1740"
+      },
+      "geometry": {
+        "coordinates": [
+          -86.37549,
+          48.718821
+        ],
+        "type": "Point"
+      },
+      "id": "address.1715170128210052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "268 Grosvenor Street, London, Ontario N6A 5B3, Canada",
+        "name": "St. Joseph's Hospital - London",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 646-6100"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.254,
+          43.0003
+        ],
+        "type": "Point"
+      },
+      "id": "address.1760038624969890"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3030 Lawrence Avenue East, Toronto, Ontario M1P 4Y6, Canada",
+        "name": "Scarborough and Rouge - Scarborough General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 438-2911"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.247734,
+          43.756231
+        ],
+        "type": "Point"
+      },
+      "id": "address.1784801336243772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "169 East Main Street, Grimsby, Ontario L3M 1P4, Canada",
+        "name": "West Lincoln Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 945-2253"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.542039,
+          43.188076
+        ],
+        "type": "Point"
+      },
+      "id": "address.1922035408696640"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "50 Charlton Avenue, Hamilton, Ontario L8N 1Y3, Canada",
+        "name": "St. Joseph's Healthcare Hamilton - Charlton Campus",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 522-1155"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.869757,
+          43.248957
+        ],
+        "type": "Point"
+      },
+      "id": "address.2044307641199452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "115 Delhi Street, Guelph, Ontario N1E 2A1, Canada",
+        "name": "Guelph General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 822-5350"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.253448,
+          43.556051
+        ],
+        "type": "Point"
+      },
+      "id": "address.2058396584624800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "58 Anson Drive, Iroquois Falls, Ontario P0K 1E0, Canada",
+        "name": "Anson General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 258-3911"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.685105,
+          48.768969
+        ],
+        "type": "Point"
+      },
+      "id": "address.2115996091482596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "7199 Gelert Road, Dysart And Others, Ontario, Canada",
+        "name": "Haliburton Highlands Health Services - Haliburton",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 457-1392"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.529384,
+          45.038593
+        ],
+        "type": "Point"
+      },
+      "id": "address.2121717835169572"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "229 Nelson Street West, Meaford, Ontario N4L 1A3, Canada",
+        "name": "Grey Bruce Health Services",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 538-1311"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.600287,
+          44.605743
+        ],
+        "type": "Point"
+      },
+      "id": "address.2132096456916802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1 Princess Anne Drive, Halton Hills, Ontario L7G 5Z9, Canada",
+        "name": "Georgetown Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 873-0111"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.933736,
+          43.64458
+        ],
+        "type": "Point"
+      },
+      "id": "address.2182637295355064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1111 Ghislain Street, Hawkesbury, Ontario K6A 3E5, Canada",
+        "name": "Hawkesbury and District General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 632-1111"
+      },
+      "geometry": {
+        "coordinates": [
+          -74.607484,
+          45.599433
+        ],
+        "type": "Point"
+      },
+      "id": "address.2217347621722854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "101 Progress Crescent, Kapuskasing, Ontario P5N 3H5, Canada",
+        "name": "Sensenbrenner Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 337-6111"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.427887,
+          49.425568
+        ],
+        "type": "Point"
+      },
+      "id": "address.2223640490274946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "19 Hospital Dr, Ontario, Canada",
+        "name": "Weeneebayko General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 658-4544"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.617254,
+          51.250008
+        ],
+        "type": "Point"
+      },
+      "id": "address.230716346052852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "75 Spring Street, Almonte, Ontario K0A 1A0, Canada",
+        "name": "Almonte General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 256-2500"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.189316,
+          45.228987
+        ],
+        "type": "Point"
+      },
+      "id": "address.2349772427171908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "260 Sugarloaf Street, Port Colborne, Ontario L3K 2N7, Canada",
+        "name": "Niagara Health - Port Colborne Site",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 378-4647"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.25915,
+          42.87975
+        ],
+        "type": "Point"
+      },
+      "id": "address.2357371130338720"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1200 Fourth Avenue, Saint Catharines, Ontario L2S 3V9, Canada",
+        "name": "Niagara Health - St. Catharines",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 378-4647"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.278718,
+          43.153211
+        ],
+        "type": "Point"
+      },
+      "id": "address.2363072010439686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "65 Third Street, Welland, Ontario L3B 4W5, Canada",
+        "name": "Niagara Health - Welland Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 378-4647"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.248696,
+          42.978894
+        ],
+        "type": "Point"
+      },
+      "id": "address.2367861816852912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "365 West Street, Bill's Corners, Ontario N3Y 1T7, Canada",
+        "name": "Norfolk General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 426-0130"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.314895,
+          42.83529
+        ],
+        "type": "Point"
+      },
+      "id": "address.239926765650536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "700 Coronation Boulevard, Cambridge, Ontario N1R 3G2, Canada",
+        "name": "Cambridge Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 621-2330"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.328564,
+          43.378122
+        ],
+        "type": "Point"
+      },
+      "id": "address.2572713636804058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1 Hospital Drive, Peterborough, Ontario K9J 7C6, Canada",
+        "name": "Peterborough Regional Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 743-2121"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.348824,
+          44.299425
+        ],
+        "type": "Point"
+      },
+      "id": "address.2593538407027192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "39 2nd Street SE, Arran-Elderslie, Ontario N0G 1L0, Canada",
+        "name": "South Bruce Grey Health Centre - Chesley",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 363-2340"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.093135,
+          44.298537
+        ],
+        "type": "Point"
+      },
+      "id": "address.2708819030407118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1000 Depalma Drive, Cobourg, Ontario K9A 5W8, Canada",
+        "name": "Northumberland Hills Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 372-6811"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.199556,
+          43.977689
+        ],
+        "type": "Point"
+      },
+      "id": "address.2840111385815524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "120 Dorothy Street, Atikokan, Ontario, Canada",
+        "name": "Atikokan General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 597-4215"
+      },
+      "geometry": {
+        "coordinates": [
+          -91.597681,
+          48.753904
+        ],
+        "type": "Point"
+      },
+      "id": "address.3025572515915302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3045 Baseline Road, Ottawa, Ontario K2H 7E4, Canada",
+        "name": "Queensway - Carleton Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 721-2000"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.807773,
+          45.334871
+        ],
+        "type": "Point"
+      },
+      "id": "address.3075816159268922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "75 Parkview Road, Byng, Ontario, Canada",
+        "name": "West Haldimand General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 768-3311"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.044495,
+          42.958462
+        ],
+        "type": "Point"
+      },
+      "id": "address.3199470486341086"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "47 Liberty Street South, Clarington, Ontario L1C 2N4, Canada",
+        "name": "Lakeridge Health Bowmanville",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 623-3331"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.679062,
+          43.909066
+        ],
+        "type": "Point"
+      },
+      "id": "address.3201742885260350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "270 Carling Terr, North Huron, Ontario, Canada",
+        "name": "Wingham and District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 357-3210"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.306555,
+          43.884493
+        ],
+        "type": "Point"
+      },
+      "id": "address.3250009451791160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "58 Goodall Street, Dryden, Ontario P8N 1V8, Canada",
+        "name": "Dryden Regional Health Centre",
+        "hours": "24 Hours Emergency",
+        "description": "Hospital",
+        "phone": "(807) 223-8200"
+      },
+      "geometry": {
+        "coordinates": [
+          -92.83864,
+          49.76956
+        ],
+        "type": "Point"
+      },
+      "id": "address.3303219231042984"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "500 Hogarth Avenue W, Greenstone, Ontario, Canada",
+        "name": "Geraldton District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 854-1862"
+      },
+      "geometry": {
+        "coordinates": [
+          -86.955264,
+          49.72338
+        ],
+        "type": "Point"
+      },
+      "id": "address.3375228391777520"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1030 Ouellette Ave, Windsor, Ontario N9A 1C8, Canada",
+        "name": "Windsor Regional Hospital - Ouellette",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 254-5577"
+      },
+      "geometry": {
+        "coordinates": [
+          -83.032316,
+          42.308366
+        ],
+        "type": "Point"
+      },
+      "id": "address.3375531627753964"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "76 Stuart St, Kingston, Ontario K7L 2V9, Canada",
+        "name": "Kingston General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 548-3232"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.493305,
+          44.223677
+        ],
+        "type": "Point"
+      },
+      "id": "address.3426924159414788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "35 Algoma Street North, Thunder Bay, Ontario P7A 4Z3, Canada",
+        "name": "St. Joseph's Care Group",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 343-2431"
+      },
+      "geometry": {
+        "coordinates": [
+          -89.222422,
+          48.43811
+        ],
+        "type": "Point"
+      },
+      "id": "address.3492586128739932"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "825 Mckinnon Drive, Espanola, Ontario P5E 1T2, Canada",
+        "name": "Espanola Regional Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 869-1420"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.781677,
+          46.248625
+        ],
+        "type": "Point"
+      },
+      "id": "address.3605638113133040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "2867 Ellesmere Road, Toronto, Ontario M1E 5E1, Canada",
+        "name": "Scarborough and Rouge - Centenary Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 284-8131"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.204964,
+          43.78009
+        ],
+        "type": "Point"
+      },
+      "id": "address.3647111693499994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "46 General Hospital Drive, Stratford, Ontario N5A 1J4, Canada",
+        "name": "Stratford General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 272-8210"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.995672,
+          43.368645
+        ],
+        "type": "Point"
+      },
+      "id": "address.3702914211425496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "170 Colborne Street West, Orillia, Ontario L3V 3B6, Canada",
+        "name": "Orillia Soldiers' Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 325-2201"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.426681,
+          44.604664
+        ],
+        "type": "Point"
+      },
+      "id": "address.3814719453204528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "2675 Concession Road, Kemptville, Ontario, Canada",
+        "name": "Kemptville District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 258-6133"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.642366,
+          45.009742
+        ],
+        "type": "Point"
+      },
+      "id": "address.3933527776979288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "21 Mcgivern Street West, Brockton, Ontario, Canada",
+        "name": "South Bruce Grey Health Centre - Walkerton",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 881-1220"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.153223,
+          44.122153
+        ],
+        "type": "Point"
+      },
+      "id": "address.3981979957433400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "41 Ramsey Lake Road, Greater Sudbury Grand Sudbury, Ontario P3E 0E1, Canada",
+        "name": "Health Science North - Ramsay Lake Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 523-7100"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.996146,
+          46.467456
+        ],
+        "type": "Point"
+      },
+      "id": "address.4029567697402606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "60 Cambridge Street North, Ottawa, Ontario K1R 7A5, Canada",
+        "name": "Bruyère - Hôpital Saint-Vincent Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 562-6262"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.708903,
+          45.413295
+        ],
+        "type": "Point"
+      },
+      "id": "address.4030239223126170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1800 8th Street East, Owen Sound, Ontario N4K 5N3, Canada",
+        "name": "Grey Bruce Health Services - Owen Sound",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 376-2121"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.911521,
+          44.569565
+        ],
+        "type": "Point"
+      },
+      "id": "address.4085090844410868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "501 Smyth Rd, Ottawa, Ontario K1G 0K5, Canada",
+        "name": "The Ottawa Hospital - General Campus",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 798-5555"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.656557,
+          45.403956
+        ],
+        "type": "Point"
+      },
+      "id": "address.4104951222613734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "100 Frank Miller Drive, Huntsville, Ontario P1H 1H7, Canada",
+        "name": "Huntsville District Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 789-2311"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.205821,
+          45.33919
+        ],
+        "type": "Point"
+      },
+      "id": "address.4186679556933476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "42 Garden St, Brockville, Ontario K6V 2E4, Canada",
+        "name": "Brockville General Hospital - St. Vincent De Paul",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 345-5649"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.684104,
+          44.592083
+        ],
+        "type": "Point"
+      },
+      "id": "address.42149789344476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "211 Lake Avenue East, Carleton Place, Ontario K7C 1J6, Canada",
+        "name": "Carleton Place and District Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 257-2200"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.136407,
+          45.140649
+        ],
+        "type": "Point"
+      },
+      "id": "address.4228117899793170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3030 Birchmount Road, Toronto, Ontario M1W 3W3, Canada",
+        "name": "Scarborough and Rouge - Birchmount Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 495-2400"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.309054,
+          43.801891
+        ],
+        "type": "Point"
+      },
+      "id": "address.4289546387648680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "75 Charles St, Brockville, Ontario K6V 1S8, Canada",
+        "name": "Brockville General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 345-5649"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.681457,
+          44.5976
+        ],
+        "type": "Point"
+      },
+      "id": "address.4292895860810470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "120 Napier St, Goderich, Ontario N7A 1W8, Canada",
+        "name": "Alexandra Marine and General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 524-8323"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.705332,
+          43.749807
+        ],
+        "type": "Point"
+      },
+      "id": "address.4344877868388398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "395 Carrie Street, Strathroy-Caradoc, Ontario N7G 3E2, Canada",
+        "name": "Strathroy Middlesex General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 245-5295"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.63459,
+          42.960853
+        ],
+        "type": "Point"
+      },
+      "id": "address.4514693970844622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "700 Ross Avenue E, Timmins, Ontario P4N 8S8, Canada",
+        "name": "Timmins and District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 267-2131"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.313805,
+          48.487724
+        ],
+        "type": "Point"
+      },
+      "id": "address.4582949625364908"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "6 Albert Street, Parry Sound, Ontario P2A 2L7, Canada",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "name": "West Parry Sound Health Centre",
+        "phone": "(705) 746-9321"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.017437,
+          45.341098
+        ],
+        "type": "Point"
+      },
+      "id": "address.4602062754547802"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "interpolated",
+        "name": "Sunnybrook Health Sciences Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 480-6100",
+        "address": "2075 Bayview Avenue, Toronto, ON  M4N3M5"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.375659,
+          43.722856
+        ],
+        "type": "Point"
+      },
+      "id": "address.4624252264549196"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "206 John Street, Byng, Ontario N1A 2P7, Canada",
+        "name": "Haldimand War Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 774-7431"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.624797,
+          42.90502
+        ],
+        "type": "Point"
+      },
+      "id": "address.4642843411454690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "43 Queen Street North, Kincardine, Ontario N2Z 1H5, Canada",
+        "name": "South Bruce Grey Health Centre - Kincardine",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 396-3331"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.625319,
+          44.189362
+        ],
+        "type": "Point"
+      },
+      "id": "address.4658087339752742"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "50 College Drive, North Bay, Ontario P1B 9T9, Canada",
+        "name": "North Bay Regional Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 474-8600"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.499436,
+          46.33557
+        ],
+        "type": "Point"
+      },
+      "id": "address.4700478169104426"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "description": "Hospital",
+        "name": "Toronto General Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 340-3131",
+        "address": "200 Elizabeth St, Toronto, ON M5G 2C4"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.388461,
+          43.65859
+        ],
+        "type": "Point"
+      },
+      "id": "address.4718310285927732"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "25 Jeffery Street, Penetanguishene, Ontario L9M 1K5, Canada",
+        "description": "Hospital",
+        "name": "Georgian Bay General Hospital - Penetanguishene",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 549-7431"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.929216,
+          44.76954
+        ],
+        "type": "Point"
+      },
+      "id": "address.4729912998181686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "4 Campbell Drive, Uxbridge, Ontario L9P 1H7, Canada",
+        "name": "Markham Stoufville Hospital - Uxbridge",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 852-9771"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.127864,
+          44.102379
+        ],
+        "type": "Point"
+      },
+      "id": "address.4752962504510128"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "82 Buttonwood Avenue, Toronto, Ontario M6M 2J5, Canada",
+        "name": "West Park Healthcare Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 243-3600"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.508423,
+          43.688868
+        ],
+        "type": "Point"
+      },
+      "id": "address.4804376780066954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "705 Mackay Street, Pembroke, Ontario K8A 2J8, Canada",
+        "name": "Pembroke Regional Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 732-2811"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.106629,
+          45.814538
+        ],
+        "type": "Point"
+      },
+      "id": "address.4895831938072184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "369 Mary Street, Allenford, Ontario, Canada",
+        "name": "Grey Bruce Health Services - Wiarton",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 534-1260"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.138664,
+          44.737498
+        ],
+        "type": "Point"
+      },
+      "id": "address.4900356243950386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "835 King Street West, Kitchener, Ontario N2G 1G5, Canada",
+        "name": "Grand River Hospital - Kitchener-Waterloo",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 749-4300"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.512026,
+          43.456253
+        ],
+        "type": "Point"
+      },
+      "id": "address.4914250554636514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "840 Mcconnell Ave, Cornwall, Ontario K6H 1S3, Canada",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "name": "Cornwall Community Hospital",
+        "phone": "(613) 938-4240"
+      },
+      "geometry": {
+        "coordinates": [
+          -74.710383,
+          45.019475
+        ],
+        "type": "Point"
+      },
+      "id": "address.4923911436957922"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "80 Grand Avenue West, Chatham-Kent, Ontario N7L 3L6, Canada",
+        "name": "Chatham-Kent Health Alliance - Chatham Campus",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 352-6400"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.193957,
+          42.404763
+        ],
+        "type": "Point"
+      },
+      "id": "address.4949152167174148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "89 Norman St, Sarnia, Ontario N7T 6V4, Canada",
+        "name": "Bluewater Health - Sarnia",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 464-4400"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.389662,
+          42.977132
+        ],
+        "type": "Point"
+      },
+      "id": "address.4952314057075322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "125 Hogan Road, Nipigon, Ontario, Canada",
+        "name": "Nipigon District Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 887-3026"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.275905,
+          49.015576
+        ],
+        "type": "Point"
+      },
+      "id": "address.4965071877270930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "145 Government Road East, Kirkland Lake, Ontario P2N 3N9, Canada",
+        "name": "Kirkland and District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 567-5251"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.014907,
+          48.153029
+        ],
+        "type": "Point"
+      },
+      "id": "address.4977909993865406"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "51 Highway 105, Red Lake, Ontario, Canada",
+        "name": "Red Lake Margaret Cochenour Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 727-2066"
+      },
+      "geometry": {
+        "coordinates": [
+          -93.821571,
+          51.013418
+        ],
+        "type": "Point"
+      },
+      "id": "address.5028090532429108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Etobicoke General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 747-3528",
+        "address": "101 Humber College Blvd, Etobicoke, ON M9V 1R8"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.598697,
+          43.729783
+        ],
+        "type": "Point"
+      },
+      "id": "address.5074548709984090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1453 Prince Rd, Windsor, Ontario N9C 3B3, Canada",
+        "name": "Hotel-Dieu Grace Healthcare",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 257-5111"
+      },
+      "geometry": {
+        "coordinates": [
+          -83.063066,
+          42.286313
+        ],
+        "type": "Point"
+      },
+      "id": "address.5097316859471494"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "60 Cornelia Street West, Smiths Falls, Ontario K7A 2H8, Canada",
+        "name": "Perth and Smith Falls District Hospital - Smith Falls",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 283-2330"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.026531,
+          44.906964
+        ],
+        "type": "Point"
+      },
+      "id": "address.5155179358035528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "340 High Street, Port Elgin, Ontario, Canada",
+        "name": "Grey Bruce Health Services - Southampton",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 797-3230"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.365775,
+          44.493845
+        ],
+        "type": "Point"
+      },
+      "id": "address.5176944570461918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "339 Windermere Road, London, Ontario N6G 2K3, Canada",
+        "name": "London Health Sciences Centre - University",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 685-8500"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.274977,
+          43.013034
+        ],
+        "type": "Point"
+      },
+      "id": "address.5203355095173214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "189 Elm Street, Saint Thomas, Ontario N5R 4J4, Canada",
+        "name": "St. Thomas - Elgin General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 631-2030"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.181141,
+          42.763411
+        ],
+        "type": "Point"
+      },
+      "id": "address.5206067236366578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "580 Harwood Avenue South, Ajax, Ontario L1S 2J4, Canada",
+        "name": "Lakeridge Health - Ajax Pickering Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 683-2320"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.017085,
+          43.836897
+        ],
+        "type": "Point"
+      },
+      "id": "address.5208513295946522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1180 Richards St, Richards Landing, Ontario, Canada",
+        "name": "North Shore Health Network - Richards Landing",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 246-2570"
+      },
+      "geometry": {
+        "coordinates": [
+          -84.035375,
+          46.29352
+        ],
+        "type": "Point"
+      },
+      "id": "address.5223643490811536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "596 Davis Drive, Newmarket, Ontario L3Y 2L2, Canada",
+        "name": "Southlake Regional Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 895-4521"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.451754,
+          44.059978
+        ],
+        "type": "Point"
+      },
+      "id": "address.5258670620545966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "5546 Portage Road, Niagara Falls, Ontario L2G 1J6, Canada",
+        "name": "Greater Niagara General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 378-4647"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.090471,
+          43.094176
+        ],
+        "type": "Point"
+      },
+      "id": "address.530669086202290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "525 Causley Street, Blind River, Ontario, Canada",
+        "name": "North Shore Health Network - Pavillon",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 356-2265"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.924131,
+          46.187271
+        ],
+        "type": "Point"
+      },
+      "id": "address.531951839571416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "24 Centennial Drive, Brussels, Ontario, Canada",
+        "name": "Seaforth Community Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 527-1650"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.385019,
+          43.551285
+        ],
+        "type": "Point"
+      },
+      "id": "address.5360655279996738"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "7 St Francis Memorial Drive, Madawaska Valley, Ontario, Canada",
+        "name": "St. Francis Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 756-3044"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.694581,
+          45.482191
+        ],
+        "type": "Point"
+      },
+      "id": "address.5395012593819916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1200 Main Street, Hamilton, Ontario L8S 2A4, Canada",
+        "name": "McMaster Health Sciences Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 521-2100"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.917599,
+          43.258904
+        ],
+        "type": "Point"
+      },
+      "id": "address.5450780622070496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "450 Blanche Street, Petrolia, Ontario N0N 1R0, Canada",
+        "name": "Bluewater Health - Petrolia",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 882-4325"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.146996,
+          42.878262
+        ],
+        "type": "Point"
+      },
+      "id": "address.561924360708362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "630 Dublin Street, Wellington North, Ontario N0G 2L0, Canada",
+        "name": "North Wellington Health Care - Louise Marshall",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 323-2210"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.737688,
+          43.974473
+        ],
+        "type": "Point"
+      },
+      "id": "address.5699748601670694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3570 King Street East, Kitchener, Ontario N2A 4B2, Canada",
+        "name": "Grand River Hospital - Freeport",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 749-4300"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.412839,
+          43.425431
+        ],
+        "type": "Point"
+      },
+      "id": "address.5712203023281726"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "750 Great Northern Rd, Sault Ste. Marie, Ontario P6B 4M6, Canada",
+        "name": "Sault Area Hospital - General",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 759-3434"
+      },
+      "geometry": {
+        "coordinates": [
+          -84.311307,
+          46.549034
+        ],
+        "type": "Point"
+      },
+      "id": "address.5917537462379722"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "459 Hume St, Collingwood, Ontario L9Y 1V5, Canada",
+        "name": "Collingwood General and Marine Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 445-2550"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.202919,
+          44.499482
+        ],
+        "type": "Point"
+      },
+      "id": "address.611546556463998"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "713 Montréal Road, Ottawa, Ontario K1K 2J3, Canada",
+        "name": "Montfort Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 746-4621"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.639342,
+          45.445461
+        ],
+        "type": "Point"
+      },
+      "id": "address.615934084942796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1053 Carling Avenue, Ottawa, Ontario K1Y 4K7, Canada",
+        "name": "Ottawa Hospital Civic Campus",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 798-5555"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.721628,
+          45.392996
+        ],
+        "type": "Point"
+      },
+      "id": "address.6457386979031508"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "800 Commissioners Road East, London, Ontario N6C 5Y6, Canada",
+        "name": "London Health Sciences Centre - Victoria",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 685-8500"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.226067,
+          42.960313
+        ],
+        "type": "Point"
+      },
+      "id": "address.6479953171856278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "255 Elizabeth St E, Listowel, ON N4W 2P5",
+        "name": "Listowel Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 291-3120"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.949135,
+          43.732702
+        ],
+        "type": "Point"
+      },
+      "id": "address.6488707312714278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "10 Trench Street, Richmond Hill, Ontario L4C 4Z3, Canada",
+        "name": "MacKenzie Health - Richmond Hill",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 883-1212"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.450707,
+          43.870369
+        ],
+        "type": "Point"
+      },
+      "id": "address.6550161879285252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1235 Wilson Avenue, Toronto, Ontario M3M 3G7, Canada",
+        "name": "Humber River Hospital - Wilson",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 242-1000"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.488369,
+          43.724122
+        ],
+        "type": "Point"
+      },
+      "id": "address.6560023707514912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "725 Coursol Road, West Nipissing Nipissing Ouest, Ontario P2B 1V9, Canada",
+        "description": "Hospital",
+        "name": "West Nipissing General Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 753-3110"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.916679,
+          46.373168
+        ],
+        "type": "Point"
+      },
+      "id": "address.6714939821021374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "2200 Eglinton Avenue West, Mississauga, Ontario L5M 2N1, Canada",
+        "name": "Credit Valley Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 813-2200"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.703703,
+          43.559497
+        ],
+        "type": "Point"
+      },
+      "id": "address.6806860985212072"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "401 Smyth Road, Ottawa, Ontario K1H 8M8, Canada",
+        "name": "Children's Hospital of Eastern Ontario",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 737-7600"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.651601,
+          45.401094
+        ],
+        "type": "Point"
+      },
+      "id": "address.6824179497962496"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "20260 County Rd 43, Alexandria, ON K0C 1A0",
+        "name": "Glengarry Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 525-2222"
+      },
+      "geometry": {
+        "coordinates": [
+          -74.644009,
+          45.305816
+        ],
+        "type": "Point"
+      },
+      "id": "address.6895232081163214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "description": "Hospital",
+        "name": "St. Joseph's Health Centre, Toronto",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 530-6000",
+        "address": "30 The Queensway, Toronto, ON M6R 1B5"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.450146,
+          43.640381
+        ],
+        "type": "Point"
+      },
+      "id": "address.6976819370341376"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "17 Government Road, Wawa, Ontario, Canada",
+        "name": "Lady Dunn Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 856-2335"
+      },
+      "geometry": {
+        "coordinates": [
+          -84.772113,
+          48.000686
+        ],
+        "type": "Point"
+      },
+      "id": "address.7002330630073342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1995 Lens Avenue, Windsor, Ontario N8W 1M5, Canada",
+        "name": "Windsor Regional Hospital - Metropolitan",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 254-5577"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.996942,
+          42.299943
+        ],
+        "type": "Point"
+      },
+      "id": "address.7031345903649818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "200 Terrace Hill Street, Brantford, Ontario N3R 5Z3, Canada",
+        "name": "Brantford General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 751-5544"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.276724,
+          43.152139
+        ],
+        "type": "Point"
+      },
+      "id": "address.7088647926034664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "75 Ann Street, Bracebridge, Ontario P1L 2C1, Canada",
+        "name": "South Muskoka Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 645-4404"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.314188,
+          45.047344
+        ],
+        "type": "Point"
+      },
+      "id": "address.7091186904324946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1405 Edward Street, Hearst, Ontario, Canada",
+        "name": "Notre-Dame Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 362-4291"
+      },
+      "geometry": {
+        "coordinates": [
+          -83.679933,
+          49.684902
+        ],
+        "type": "Point"
+      },
+      "id": "address.7094912512099884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "33 Drummond Street West, Perth, Ontario K7H 2K1, Canada",
+        "name": "Perth and Smiths Falls District Hospital - Perth",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 267-1500"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.252953,
+          44.905722
+        ],
+        "type": "Point"
+      },
+      "id": "address.7108605348377774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1230 North Shore Boulevard East, Burlington, Ontario L7S 1C4, Canada",
+        "name": "Joseph Brant Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 632-3737"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.802596,
+          43.317431
+        ],
+        "type": "Point"
+      },
+      "id": "address.7130400941245438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "30 Bond Street, Toronto, Ontario M5B 1W8, Canada",
+        "name": "St, Michael's Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 360-4000"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.37781,
+          43.65361
+        ],
+        "type": "Point"
+      },
+      "id": "address.7144113264144910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "20 Lynch Street, Brampton, Ontario L6W 2Z8, Canada",
+        "name": "William Osler Health - Peel Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 494-2120"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.750996,
+          43.690263
+        ],
+        "type": "Point"
+      },
+      "id": "address.7356154018068656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "6 Mcpherson Street, Minden Hills, Ontario, Canada",
+        "name": "Haliburton Highlands Health Services - Minden",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 286-2140"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.730359,
+          44.925428
+        ],
+        "type": "Point"
+      },
+      "id": "address.7371649157013660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1112 Saint Andrews Drive, Midland, Ontario L4R 1Y2, Canada",
+        "name": "Georgian Bay General Hospital - Midland",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 526-1300"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.913811,
+          44.741123
+        ],
+        "type": "Point"
+      },
+      "id": "address.7376157978886872"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "8 Richmond Park Drive, Greater Napanee, Ontario K7R 2Z4, Canada",
+        "name": "Lennox and Addington County General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 354-3301"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.967015,
+          44.240015
+        ],
+        "type": "Point"
+      },
+      "id": "address.7435796268731794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "North York General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 756-6001",
+        "address": "4001 Leslie St, North York, ON M2K 1E1"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.362457,
+          43.769627
+        ],
+        "type": "Point"
+      },
+      "id": "address.7716173634589096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "237 Barton Street, Hamilton, Ontario L8L 5G4, Canada",
+        "name": "Hamilton General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 521-2100"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.854198,
+          43.262274
+        ],
+        "type": "Point"
+      },
+      "id": "address.7728142806650944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "201 Georgian Drive, Barrie, Ontario L4M 6Z7, Canada",
+        "name": "Royal Victoria Regional Health Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 728-9802"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.661713,
+          44.414932
+        ],
+        "type": "Point"
+      },
+      "id": "address.7765681561583548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "235 Union Street East, Belwood, Ontario N1M 1W3, Canada",
+        "name": "Groves Memorial Community Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 843-2010"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.373041,
+          43.705384
+        ],
+        "type": "Point"
+      },
+      "id": "address.7892357483911230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "325 Margaret Avenue, Blenheim, Ontario N8A 2A6, Canada",
+        "name": "Chatham-Kent Health Alliance - Sydenham Site",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 352-6400"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.366847,
+          42.59841
+        ],
+        "type": "Point"
+      },
+      "id": "address.7902942530528408"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1 Hospital Crt, Oshawa, Ontario L1G 8A2, Canada",
+        "name": "Lakeridge Health - Oshawa",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 576-8711"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.868918,
+          43.905512
+        ],
+        "type": "Point"
+      },
+      "id": "address.7940404803918846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "984 Oliver Road, Thunder Bay, Ontario P7B 7C7, Canada",
+        "name": "Thunder Bay Regional Health Sciences Centre",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 684-6000"
+      },
+      "geometry": {
+        "coordinates": [
+          -89.269172,
+          48.423762
+        ],
+        "type": "Point"
+      },
+      "id": "address.7962420201519940"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Mississauga Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 848-7100",
+        "address": "100 Queensway W, Mississauga, ON L5B 1B8"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.608082,
+          43.571943
+        ],
+        "type": "Point"
+      },
+      "id": "address.7988760419092386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "7030 Derry Road, Milton, Ontario L9T 4T7, Canada",
+        "name": "Halton Healthcare Services - Milton",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 878-2383"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.869261,
+          43.497219
+        ],
+        "type": "Point"
+      },
+      "id": "address.7995142587984432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3001 Hospital Gate, Oakville, Ontario L6M 5A9, Canada",
+        "name": "Halton Healthcare Services - Oakville Trafalgar Memorial",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 845-2571"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.763509,
+          43.450341
+        ],
+        "type": "Point"
+      },
+      "id": "address.8008240985616292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "70 Spine Road, Elliot Lake, Ontario P5A 1X1, Canada",
+        "name": "St. Joseph's General Hospital - Elliot Lake",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 848-7181"
+      },
+      "geometry": {
+        "coordinates": [
+          -82.661154,
+          46.384535
+        ],
+        "type": "Point"
+      },
+      "id": "address.8089320692823758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "21 Sylvan Street, Kenora, Ontario P9N 4L2, Canada",
+        "name": "Lake of the Woods District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(807) 468-9861"
+      },
+      "geometry": {
+        "coordinates": [
+          -94.49927,
+          49.767851
+        ],
+        "type": "Point"
+      },
+      "id": "address.8173052249314058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "name": "Toronto Western Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 603-5801",
+        "address": "399 Bathurst St, Toronto, ON M5T 2S8"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.405496,
+          43.653544
+        ],
+        "type": "Point"
+      },
+      "id": "address.8314002085983844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "1995 Lens Avenue, Windsor, Ontario N8W 1M5, Canada",
+        "name": "South Huron Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 235-2700"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.480789,
+          43.34381
+        ],
+        "type": "Point"
+      },
+      "id": "address.8320760622243326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "711 Concession St, Hamilton, ON L8V 1C3",
+        "name": "Juravinski Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 389-4411"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.84558,
+          43.2402
+        ],
+        "type": "Point"
+      },
+      "id": "address.8340456278879612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "29 Noxon Street, Ingersoll, Ontario N5C 2V2, Canada",
+        "name": "Alexandra Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 485-1700"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.875475,
+          43.032099
+        ],
+        "type": "Point"
+      },
+      "id": "address.8360258226485936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "2100 Bovaird Drive East, Brampton, Ontario L6R 1W6, Canada",
+        "name": "William Osler Health - Brampton Civic Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 494-2120"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.743556,
+          43.74697
+        ],
+        "type": "Point"
+      },
+      "id": "address.8367055397652944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "117 Banting Drive, Deep River, Ontario, Canada",
+        "name": "Deep River and District Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 584-3333"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.474762,
+          46.09112
+        ],
+        "type": "Point"
+      },
+      "id": "address.8380735074551428"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "3276 Saint Clair Avenue East, Toronto, Ontario M1L 0B9, Canada",
+        "name": "Providence Healthcare",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 285-3666"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.285004,
+          43.712228
+        ],
+        "type": "Point"
+      },
+      "id": "address.8535198690968638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "200 Fletcher Crescent, New Tecumseth, Ontario L9R 1L7, Canada",
+        "name": "Stevenson Memorial Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 435-6281"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.875126,
+          44.155534
+        ],
+        "type": "Point"
+      },
+      "id": "address.8554496351977066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "600 University Avenue, Toronto, Ontario M5G 1X5, Canada",
+        "name": "Mount Sinai Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(416) 586-4800"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.390279,
+          43.657438
+        ],
+        "type": "Point"
+      },
+      "id": "address.8556627931637628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "88 Maplewood Avenue, Hamilton, Ontario L8M 1W9, Canada",
+        "name": "St. Peter's Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 777-3837"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.837245,
+          43.244331
+        ],
+        "type": "Point"
+      },
+      "id": "address.8568813047732306"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "451 Paxton Street, Blackstock, Ontario L9L 1L9, Canada",
+        "name": "Lakeridge Health - Port Perry",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 985-7321"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.954468,
+          44.10462
+        ],
+        "type": "Point"
+      },
+      "id": "address.8717731329095888"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "100 Rolling Hills Drive, Orangeville, Ontario L9W 4X9, Canada",
+        "name": "Headwaters Health Care Centre - Dufferin",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(519) 941-2410"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.074002,
+          43.919625
+        ],
+        "type": "Point"
+      },
+      "id": "address.8768526724244876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "265 Dundas Street East, Belleville, Ontario K8N 1E6, Canada",
+        "name": "QHC Belleville General Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 969-7400"
+      },
+      "geometry": {
+        "coordinates": [
+          -77.364489,
+          44.163241
+        ],
+        "type": "Point"
+      },
+      "id": "address.8937889790086032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "381 Church Street, Markham, Ontario L6B 1A1, Canada",
+        "name": "Markham Stoufville Hospital",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(905) 472-7000"
+      },
+      "geometry": {
+        "coordinates": [
+          -79.231488,
+          43.883493
+        ],
+        "type": "Point"
+      },
+      "id": "address.929325521008810"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "350 John Street North, Arnprior, Ontario K7S 2B1, Canada",
+        "name": "Arnprior Regional Health ",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 623-3166"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.352265,
+          45.441325
+        ],
+        "type": "Point"
+      },
+      "id": "address.947271097316566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "11 Meredith St W, Little Current, ON P0P 1K0",
+        "name": "Manitoulin Health Centre - Little Current",
+        "description": "Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(705) 368-2300"
+      },
+      "geometry": {
+        "coordinates": [
+          -81.926907,
+          45.980028
+        ],
+        "type": "Point"
+      },
+      "id": "b7a485a6d231c6adda5015d400b34226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "accuracy": "point",
+        "address": "752 King St W, Kingston, ON K7L 4X3",
+        "description": "Hospital",
+        "name": "Providence Care Hospital",
+        "hours": "24 Hours Emergency",
+        "phone": "(613) 544-4900"
+      },
+      "geometry": {
+        "coordinates": [
+          -76.528006,
+          44.215931
+        ],
+        "type": "Point"
+      },
+      "id": "de6eaf7e51a720a3745b69c341d1dab3"
+    }
+  ],
+  "type": "FeatureCollection"
+}
