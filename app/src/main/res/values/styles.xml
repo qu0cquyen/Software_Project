@@ -24,4 +24,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+    <style name="CustomNavigationMapRoute" parent="NavigationMapRoute">
+        <item name="upcomingManeuverArrowBorderColor">@color/mapboxRed</item>
+    </style>
+    <style name="CustomNavigationView" parent="NavigationViewLight">
+        <item name="navigationViewRouteStyle">@style/CustomNavigationMapRoute</item>
+    </style>
+
 </resources>

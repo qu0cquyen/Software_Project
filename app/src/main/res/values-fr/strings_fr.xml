@@ -45,4 +45,11 @@
     <string name="patientInfo_BloodPressure">Tension artérielle</string>
     <string name="patientInfo_HeartRate">Rythme cardiaque</string>
     <string name="patientInfo_oxygen">Oxygène</string>
+
+    <!-- Sliding Item -->
+    <string name="hos_name">Nom de l\'hôpital</string>
+    <string name="hos_address">Adresse de l\'hôpital</string>
+    <string name="hos_phone">Téléphone de l\'hôpital</string>
+
+
 </resources>

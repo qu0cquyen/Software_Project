@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.emergensui.automotive_ui">
 
-    <!-- Permission -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -13,12 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapActivity"></activity>
-        <activity android:name=".patient_information"
-                  android:label="@string/patientInfo_TitleScreen"
-                  android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".doc_nur_contacts"
-                android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".embedded_navigation"></activity>
+        <activity android:name=".MapActivity" />
+        <activity
+            android:name=".patient_information"
+            android:label="@string/patientInfo_TitleScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".doc_nur_contacts"
+            android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".patient_list"
             android:label="@string/patientList_TitleScreen"

@@ -1,4 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_patientInfo">16dp</dimen>
+
+    <!-- Navigation -->
+    <dimen name="mph_text_size">10sp</dimen>
+    <dimen name="speed_text_size">50sp</dimen>
 </resources>
