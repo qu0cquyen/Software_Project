@@ -17,11 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.HospitalHolder> {
     private Context context;
     private List<Hospital> lstHospital;
+    private static ClickListener clickListener;
 
-    public HospitalAdapter(Context context, List<Hospital> lstHos)
+    public HospitalAdapter(Context context, List<Hospital> lstHos, ClickListener recyclerClickListener)
     {
         this.context = context;
         this.lstHospital = lstHos;
+        this.clickListener = recyclerClickListener;
     }
 
     @NonNull
@@ -32,12 +34,17 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HospitalAdapter.HospitalHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HospitalAdapter.HospitalHolder holder, final int position) {
         Hospital h = lstHospital.get(position);
 
         holder.setDetails(h);
-        System.out.println(h.getAddress() + " - " + h.getName());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickListener.onItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -50,17 +57,25 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
         void onItemClick(int position);
     }
 
-    class HospitalHolder extends RecyclerView.ViewHolder
+    static class HospitalHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private TextView txtName;
         private TextView txtAddress;
         private TextView txtPhone;
+        RecyclerView recyclerView;
 
         public HospitalHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txt_hos_name);
             txtAddress = itemView.findViewById(R.id.txt_hos_addr);
             txtPhone = itemView.findViewById(R.id.txt_hos_phone);
+            /*recyclerView = itemView.findViewById(R.id.hospitalRecyclerView);
+            recyclerView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClick(getLayoutPosition());
+                }
+            });*/
         }
 
         void setDetails(Hospital h)
@@ -68,6 +83,11 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
            txtName.setText(h.getName());
            txtAddress.setText(h.getAddress());
            txtPhone.setText(h.getPhone());
+        }
+
+        @Override
+        public void onClick(View view) {
+
         }
     }
 }

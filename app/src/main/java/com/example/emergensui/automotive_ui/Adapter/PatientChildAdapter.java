@@ -2,7 +2,6 @@ package com.example.emergensui.automotive_ui.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,16 +111,13 @@ public class PatientChildAdapter extends RecyclerView.Adapter<PatientChildAdapte
             txtPatientRoom.setText(String.valueOf(med.getBlood_pressure()));
             txtPatientType.setText(String.valueOf(med.getHeart_rate()));
             txtPatientDoB.setText(String.valueOf(med.getOxygen()));
-            txtPatientRoom.setTextColor(Color.WHITE);
-            txtPatientType.setTextColor(Color.WHITE);
-            txtPatientDoB.setTextColor(Color.WHITE);
             cardView.setRadius(100);
-            cardView.setCardElevation(2.1f);
-            cardView.setMaxCardElevation(3f);
+            //cardView.setCardElevation(2.1f);
+            //cardView.setMaxCardElevation(3f);
             cardView.setContentPadding(30,30,30,0);
             cardView.setUseCompatPadding(true);
             cardView.setPreventCornerOverlap(true);
-            cardView.setCardBackgroundColor(Color.parseColor("#add8e6"));
+            //cardView.setCardBackgroundColor(Color.parseColor("#add8e6"));
         }
     }
 }

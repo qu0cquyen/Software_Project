@@ -1,6 +1,7 @@
 package com.example.emergensui.automotive_ui.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,6 +93,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryH
         {
             txtDocNote.setText(vd.getDoc_note());
             txtDate.setText(vd.getDate());
+            txtDocNote.setTextColor(Color.parseColor("#000000"));
+            txtDate.setTextColor(Color.parseColor("#000000"));
         }
     }
 }

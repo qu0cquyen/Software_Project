@@ -55,8 +55,6 @@ public class paramedic_screen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent mapIntent = new Intent(paramedic_screen.this, MapActivity.class);
-                //Intent mapIntent = new Intent(paramedic_screen.this, google_map.class);
-                //Intent mapIntent = new Intent(paramedic_screen.this, embedded_navigation.class);
                 startActivity(mapIntent);
             }
         });
@@ -91,16 +89,12 @@ public class paramedic_screen extends AppCompatActivity {
 
                 for(DataSnapshot dsh : dataSnapshot.getChildren()) {
                     final String speedometerPath = "speedometer/" + dsh.getKey();
-                    System.out.println(speedometerPath);
-                    System.out.println(dsh.getKey());
 
                     ref = database.getReference(speedometerPath);
                     ref.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             s = dataSnapshot.getValue(speedometer.class);
-
-
 
                             speedometer.speedTo(s.getSpeed());
                             heart_value.setText(s.getHeart_rate());
