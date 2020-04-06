@@ -53,7 +53,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -125,6 +130,7 @@ public class MapActivity extends AppCompatActivity implements
     //List of locations
     private FeatureCollection featureCollection;
     private List<Hospital> lstHospital; //Store a list of hospitals
+    private List<Hospital> newSortedListHospital;
 
     //RecyclerView
     private RecyclerView hosRecyclerView;
@@ -169,8 +175,6 @@ public class MapActivity extends AppCompatActivity implements
         }
 
     }
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,8 +225,7 @@ public class MapActivity extends AppCompatActivity implements
             Toast.makeText(getApplicationContext(), "Failed to load file", Toast.LENGTH_LONG).show();
         }
 
-        //Initialize Hospital list
-        lstHospital = new ArrayList<>();
+
     }
 
     //Add hospital icon on the layer
@@ -282,6 +285,13 @@ public class MapActivity extends AppCompatActivity implements
                         //Set up a layer which is used to show hospital's icon
                         initHospitalLocationIconSymbolLayer();
 
+                        //Get the current location.
+                        originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
+                                locationComponent.getLastKnownLocation().getLatitude());
+
+                        //Initialize Hospital list
+                        lstHospital = new ArrayList<>();
+
                         //Create a list of Hospital from Feature Collection
                         List<Feature> featureList = featureCollection.features();
 
@@ -303,6 +313,10 @@ public class MapActivity extends AppCompatActivity implements
                                 String singleHospitalPhone = singleHospital.getStringProperty("phone");
                                 String singleHospitalAddress = singleHospital.getStringProperty("address");
 
+                                //Add a boolean property to use for adjusting the icon the selected hospital location
+                                singleHospital.addBooleanProperty(PROPERTY_SELECTED, false);
+
+                                //Get the single location's LatLng coordinates
                                 Point singleHospitalLocation = (Point)singleHospital.geometry();
 
                                 //Create a new LatLng object with the Position object created above
@@ -317,7 +331,11 @@ public class MapActivity extends AppCompatActivity implements
                                         singleHospitalLatLng
                                 ));
                             }
-                            setUpRecyclerView(lstHospital);
+                            //Nearest hospital -> Farthest hospital algorithm
+                            //Calculate the distances between the current location to each hospital's coordinate
+                            newSortedListHospital = distanceCalculation(lstHospital);
+
+                            setUpRecyclerView(newSortedListHospital);
                         }
 
                         mapboxMap.addOnMapClickListener(MapActivity.this);
@@ -346,13 +364,63 @@ public class MapActivity extends AppCompatActivity implements
                 });
     }
 
+    private List<Hospital> distanceCalculation(List<Hospital> hospitalList)
+    {
+        double initialPointX = originPoint.longitude();
+        double initialPointY = originPoint.latitude();
+        HashMap<Hospital, Double> hmDistance = new HashMap<>();
+        for(Hospital h : hospitalList)
+        {
+            double desPointX = h.getLocation().getLongitude();
+            double desPointY = h.getLocation().getLatitude();
+            hmDistance.put(h, (Math.sqrt(Math.pow(initialPointX - desPointX, 2) +
+                                        Math.pow(initialPointY - desPointY, 2))));
+        }
+
+
+
+        return nearestToFarthest(hmDistance);
+    }
+
+    private List<Hospital> nearestToFarthest(HashMap<Hospital, Double> hmDistance)
+    {
+        //Start sorting
+        //Stores Hashmap into Entries
+        Set<Map.Entry<Hospital, Double>> entries = hmDistance.entrySet();
+
+        //Set up a comparator
+        Comparator<Map.Entry<Hospital, Double>> distanceComparator = new Comparator<Map.Entry<Hospital, Double>>() {
+            @Override
+            public int compare(Map.Entry<Hospital, Double> t1, Map.Entry<Hospital, Double> t2) {
+                Double d1 = t1.getValue();
+                Double d2 = t2.getValue();
+                return d1.compareTo(d2);
+            }
+        };
+
+        //Convert Set to List, since Sort method needs a List
+        List<Map.Entry<Hospital, Double>> lstEntries = new ArrayList<>(entries);
+
+        //Sort HashMap using Comparator
+        Collections.sort(lstEntries, distanceComparator);
+
+        //Using a new List to contain the sorted Entries
+        List<Hospital> sortedHospital = new ArrayList<>();
+        for(Map.Entry<Hospital, Double> entry : lstEntries)
+        {
+            sortedHospital.add(entry.getKey());
+        }
+        return sortedHospital;
+    }
+
+
     private void setUpRecyclerView(List<Hospital> hospitalList)
     {
         //Recycler View
         hosRecyclerView = findViewById(R.id.hospitalRecyclerView);
         hosRecyclerView.setHasFixedSize(true);
         hosRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        hosAdapter = new HospitalAdapter(this, hospitalList);
+        hosAdapter = new HospitalAdapter(this, hospitalList, this);
         hosRecyclerView.setAdapter(hosAdapter);
         hosRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
     }
@@ -361,16 +429,19 @@ public class MapActivity extends AppCompatActivity implements
     public void onItemClick(int position)
     {
         //Get the selected individual location via recyclerview
-        Hospital singleHos = lstHospital.get(position);
+        Hospital singleHos = newSortedListHospital.get(position);
 
         //Evaluate each Feature's "select state" to appropriately style the location's icon
         List<Feature> featureList = featureCollection.features();
-        Point selectedLocation = (Point)featureCollection.features().get(position).geometry();
+        //Point selectedLocation = (Point)featureCollection.features().get(position).geometry();
+        Point selectedLocation = Point.fromLngLat(singleHos.getLocation().getLongitude(),
+                                                    singleHos.getLocation().getLatitude());
 
         for(int i = 0; i < featureList.size(); i++)
         {
             if(featureList.get(i).getStringProperty("name").equals(singleHos.getName()))
             {
+                System.out.println(featureList.get(i).getStringProperty("name") + " - " + singleHos.getName());
                 if(featureSelectStatus(i))
                 {
                     setFeatureSelectState(featureList.get(i), false);
@@ -511,8 +582,8 @@ public class MapActivity extends AppCompatActivity implements
     @Override
     public boolean onMapClick(@NonNull final LatLng point) {
         destinationPoint = Point.fromLngLat(point.getLongitude(), point.getLatitude());
-        originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
-                locationComponent.getLastKnownLocation().getLatitude());
+        /*originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
+                locationComponent.getLastKnownLocation().getLatitude());*/
 
         GeoJsonSource source = mapboxMap.getStyle().getSourceAs("destination-source-id");
         if (source != null) {
@@ -704,8 +775,8 @@ public class MapActivity extends AppCompatActivity implements
                     return;
                 }
 
-                txt_nv_header.setText(result.getLastLocation().getLatitude() + " | " +
-                                        result.getLastLocation().getLongitude());
+                txt_nv_header.setText(result.getLastLocation().getLongitude() + " | " +
+                                        result.getLastLocation().getLatitude());
 
                 //Pass new location to the Map SDK's Location Component
                 if (mapActivity.mapboxMap != null && result.getLastLocation() != null) {
